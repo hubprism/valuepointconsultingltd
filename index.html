@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ValuePoint Consulting Limited</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Arial,Helvetica,sans-serif;color:#101828;background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+    .btn{display:inline-block;padding:14px 24px;border-radius:6px;font-weight:700}
+    .btn-orange{background:#ff8500;color:white}
+    .btn-dark{background:#061a3a;color:white}
+    header{position:sticky;top:0;background:white;z-index:10;border-bottom:1px solid #eee}
+    nav{height:75px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:26px;font-weight:900;color:#061a3a}
+    .logo span{color:#ff8500}
+    .links{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:700}
+    .hero{background:linear-gradient(135deg,#031226,#061a3a 60%,#08244d);color:white;padding:90px 0}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+    .eyebrow{color:#ff8500;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:900;margin-bottom:12px}
+    h1{font-size:58px;line-height:1.05;margin-bottom:22px}
+    h1 span,.orange{color:#ff8500}
+    .hero p{font-size:18px;color:#d9e2ef;margin-bottom:28px}
+    .dashboard{background:white;color:#061a3a;border-radius:18px;padding:28px;box-shadow:0 25px 70px rgba(0,0,0,.25)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+    .stat{border:1px solid #e8edf5;border-radius:12px;padding:18px;background:#fff}
+    .chart{height:210px;border:1px solid #e8edf5;border-radius:14px;padding:18px;background:linear-gradient(#fff,#f8fafc)}
+    .bars{display:flex;align-items:end;gap:12px;height:130px;margin-top:20px}
+    .bars span{flex:1;background:#ff8500;border-radius:8px 8px 0 0}
+    .brands{padding:38px 0;text-align:center;border-bottom:1px solid #eee}
+    .brand-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-top:22px;font-size:22px;font-weight:900;color:#344054}
+    section{padding:85px 0}
+    .title{text-align:center;font-size:40px;line-height:1.15;color:#061a3a;margin-bottom:12px}
+    .line{width:60px;height:4px;background:#ff8500;margin:0 auto 45px;border-radius:20px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card{border:1px solid #e8edf5;border-radius:16px;padding:32px;background:white;box-shadow:0 12px 28px rgba(16,24,40,.06)}
+    .icon{width:54px;height:54px;border-radius:14px;background:#eef4ff;display:grid;place-items:center;font-size:26px;margin-bottom:20px}
+    .card h3{color:#061a3a;margin-bottom:10px}
+    .card p{color:#667085;font-size:14px;margin-bottom:15px}
+    .impact{background:#061a3a;color:white}
+    .impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .impact h2{font-size:42px;margin-bottom:15px}
+    .impact p{color:#cbd5e1}
+    .numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+    .numbers h3{font-size:30px;color:white}
+    .photo{min-height:350px;border-radius:20px;background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)),url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80') center/cover}
+    .industries{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+    .industry{text-align:center;background:#f8fafc;border-radius:14px;padding:25px;font-weight:800;color:#061a3a}
+    .process{background:#f8fafc}
+    .cta{background:#061a3a;color:white}
+    .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    form{background:white;padding:30px;border-radius:16px}
+    input,textarea{width:100%;padding:14px;margin-bottom:13px;border:1px solid #e8edf5;border-radius:8px;font:inherit}
+    textarea{height:110px}
+    button{border:0;width:100%;cursor:pointer}
+    footer{background:#031226;color:white;padding:55px 0}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+    footer p,footer li{color:#cbd5e1;font-size:14px;list-style:none;margin-bottom:8px}
+    @media(max-width:900px){
+      .links{display:none}.hero-grid,.impact-grid,.cta-grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr 1fr}.brand-grid,.industries{grid-template-columns:repeat(3,1fr)}
+      h1{font-size:42px}.footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:600px){
+      .grid-3,.brand-grid,.industries,.numbers,.footer-grid{grid-template-columns:1fr}
+      h1{font-size:36px}.title{font-size:30px}.stats{grid-template-columns:1fr}
+    }
+
+    /* WhatsApp Chatbot */
+    .whatsapp-widget{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      z-index:9999;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+    .whatsapp-chatbox{
+      width:330px;
+      background:#fff;
+      border-radius:18px;
+      box-shadow:0 20px 60px rgba(0,0,0,.25);
+      overflow:hidden;
+      margin-bottom:15px;
+      display:none;
+      border:1px solid #e8edf5;
+    }
+    .whatsapp-chatbox.active{display:block}
+    .wa-header{
+      background:#075e54;
+      color:#fff;
+      padding:16px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .wa-avatar{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background:#25d366;
+      display:grid;
+      place-items:center;
+      font-size:22px;
+      font-weight:bold;
+    }
+    .wa-header h4{font-size:16px;margin:0}
+    .wa-header small{color:#d9fff0}
+    .wa-body{
+      background:#efeae2;
+      padding:18px;
+    }
+    .wa-message{
+      background:#fff;
+      color:#111;
+      padding:12px 14px;
+      border-radius:12px;
+      font-size:14px;
+      margin-bottom:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+    }
+    .wa-options{
+      display:grid;
+      gap:8px;
+      margin-top:10px;
+    }
+    .wa-option{
+      border:1px solid #d7efe1;
+      background:#ffffff;
+      color:#075e54;
+      padding:10px 12px;
+      border-radius:10px;
+      font-size:13px;
+      font-weight:700;
+      cursor:pointer;
+      text-align:left;
+      width:100%;
+    }
+    .wa-option:hover{background:#e9fff2}
+    .wa-footer{
+      padding:12px;
+      background:#fff;
+      display:flex;
+      gap:8px;
+    }
+    .wa-footer input{
+      flex:1;
+      margin:0;
+      padding:12px;
+      border-radius:20px;
+      font-size:13px;
+    }
+    .wa-send{
+      width:42px;
+      height:42px;
+      min-width:42px;
+      border-radius:50%;
+      background:#25d366;
+      color:#fff;
+      border:0;
+      cursor:pointer;
+      font-size:18px;
+      display:grid;
+      place-items:center;
+      padding:0;
+    }
+    .whatsapp-float{
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      background:#25d366;
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:34px;
+      box-shadow:0 14px 35px rgba(37,211,102,.45);
+      cursor:pointer;
+      border:0;
+      margin-left:auto;
+      position:relative;
+      padding:0;
+    }
+    .whatsapp-float::before{
+      content:"Chat with us";
+      position:absolute;
+      right:76px;
+      white-space:nowrap;
+      background:#061a3a;
+      color:#fff;
+      font-size:13px;
+      font-weight:700;
+      padding:9px 12px;
+      border-radius:999px;
+      box-shadow:0 8px 24px rgba(0,0,0,.18);
+    }
+    @media(max-width:600px){
+      .whatsapp-widget{right:14px;bottom:14px}
+      .whatsapp-chatbox{width:calc(100vw - 28px)}
+      .whatsapp-float::before{display:none}
+    }
+
+  
+
+/* Scroll Fade Animation */
+.fade-in{
+  opacity:0;
+  transform:translateY(45px);
+  transition:opacity .9s ease, transform .9s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.fade-delay-1{transition-delay:.1s}
+.fade-delay-2{transition-delay:.2s}
+.fade-delay-3{transition-delay:.3s}
+.fade-delay-4{transition-delay:.4s}
+.fade-delay-5{transition-delay:.5s}
+.fade-delay-6{transition-delay:.6s}
+.fade-delay-7{transition-delay:.7s}
+.fade-delay-8{transition-delay:.8s}
+
+
+
+/* Hero Slider */
+.hero{
+  position:relative;
+  overflow:hidden;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+}
+
+.hero-slider{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+.hero-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:opacity 1.2s ease-in-out;
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-slide::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(rgba(3,18,38,.82), rgba(6,26,58,.82));
+}
+
+.hero-slide.active{
+  opacity:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:100%;
+}
+
+.slider-dots{
+  position:absolute;
+  bottom:35px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+  z-index:3;
+}
+
+.slider-dot{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:rgba(255,255,255,.45);
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+.slider-dot.active{
+  background:#ff8500;
+  transform:scale(1.2);
+}
+
+</style>
+</head>
+<body>
+<header class="fade-in fade-delay-1">
+  <nav class="container">
+      <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+                <img src="images/Logo.png">
+            </a>
+    <div class="links">
+      <a href="#">Home</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#industries">Industries</a><a href="#careers">Careers</a><a href="#resources">Resources</a><a href="#contact">Contact</a>
+      <a class="btn btn-dark" href="#contact">Book Consultation</a>
+    </div>
+  </nav>
+</header>
+
+
+<section class="hero fade-in fade-delay-2">
+
+  <div class="hero-slider">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')"></div>
+
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80')"></div>
+
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80')"></div>
+
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=80')"></div>
+
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80')"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Your People. Our Priority.</div>
+        <h1>Driving Measurable <span> Morden Business Value</span></h1>
+        <p>We help organizations attract, develop, and retain the right talent through smart HR solutions.</p>
+        <a class="btn btn-orange" href="#contact">Book Consultation</a>
+      </div>
+
+      <div class="dashboard">
+        <h3>HR Dashboard Overview</h3>
+
+        <div class="stats">
+          <div class="stat">
+            <small>Total Employees</small>
+            <h2>2,450</h2>
+          </div>
+
+          <div class="stat">
+            <small>Active Candidates</small>
+            <h2>1,248</h2>
+          </div>
+
+          <div class="stat">
+            <small>Interviews</small>
+            <h2>320</h2>
+          </div>
+        </div>
+
+        <div class="chart">
+          <b>Hiring Pipeline</b>
+
+          <div class="bars">
+            <span style="height:45%"></span>
+            <span style="height:75%"></span>
+            <span style="height:55%"></span>
+            <span style="height:85%"></span>
+            <span style="height:65%"></span>
+            <span style="height:95%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-dots">
+    <span class="slider-dot active"></span>
+    <span class="slider-dot"></span>
+    <span class="slider-dot"></span>
+    <span class="slider-dot"></span>
+    <span class="slider-dot"></span>
+  </div>
+
+</section>
+
+
+<div class="brands fade-in fade-delay-3">
+  <div class="container">
+    <p>Trusted by 500+ companies around the world</p>
+    <div class="brand-grid"><div>Nestlé</div><div>access</div><div>DANGOTE</div><div>MTN</div><div>airtel</div><div>Stanbic IBTC</div></div>
+  </div>
+</div>
+
+<section id="services" class="fade-in fade-delay-4">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center">Our Services</p>
+    <h2 class="title">Comprehensive HR Solutions<br>Tailored to <span class="orange">Your Needs</span></h2><div class="line"></div>
+    <div class="grid-3">
+      <div class="card"><div class="icon">👥</div><h3>Recruitment & Talent Placement</h3><p>Sourcing, assessing and placing the right talent at every level of your organisation, leveraging our extensive candidate network and rigorous selection methodology.</p></div>
+      <div class="card"><div class="icon">🤝</div><h3>HR Advisory & Outsourcing</h3><p>Providing expert HR support on a retained or project basis from day-to-day HR operations to strategic people-management advisory  giving you flexibility without compromising quality.</p><b>Learn More →</b></div>
+      <div class="card"><div class="icon">💳</div><h3>Building a Standard HR System</h3><p>We help organisations design, implement and embed robust HR frameworks from policies and procedures to HR infrastructure that are compliant, scalable and fit for purpose.</p><b>Learn More →</b></div>
+      <div class="card"><div class="icon">🎓</div><h3>Training & Leadership Development</h3><p>Designing and delivering bespoke learning programmes that build capability, enhance performance, and develop the next generation of leaders within your organisation.</p><b>Learn More →</b></div>
+      <div class="card"><div class="icon">📈</div><h3>Employee Engagement Programs</h3><p>Creating environments where employees are motivated, committed, and aligned to organisational goals — reducing attrition and boosting productivity through structured engagement strategies.</p><b>Learn More →</b></div>
+      <div class="card"><div class="icon">🛡️</div><h3>HR & People Strategy</h3><p>Aligning your people agenda to your business strategy — translating corporate objectives into actionable workforce plans, culture initiatives, and performance frameworks.</p><b>Learn More →</b></div>
+      <div class="card"><div class="icon">🎓</div><h3>Leadership Advisory</h3><p>Providing senior leaders and executive teams with strategic counsel, coaching, and advisory support to enhance decision-making, leadership effectiveness, and organisational impact.</p><b>Learn More →</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="impact fade-in fade-delay-5" id="about">
+  <div class="container impact-grid">
+    <div>
+      <p class="eyebrow">Why Choose Us</p>
+      <h2>We Deliver Measurable Impact</h2>
+      <p>Our commitment to excellence and data-driven approach ensures your organization gets the best HR solutions.</p>
+      <div class="numbers"><div><h3>500+</h3><small>Companies Served</small></div><div><h3>95%</h3><small>Client Retention</small></div><div><h3>10+</h3><small>Years Experience</small></div><div><h3>50+</h3><small>HR Experts</small></div></div>
+    </div>
+    <div class="photo"></div>
+  </div>
+</section>
+
+<section id="industries" class="fade-in fade-delay-6">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center">Industries We Serve</p>
+    <h2 class="title">Expert HR Solutions Across Industries</h2><div class="line"></div>
+    <div class="industries"><div class="industry">Healthcare</div><div class="industry">Banking & Finance</div><div class="industry">Technology</div><div class="industry">Manufacturing</div><div class="industry">Education</div><div class="industry">Logistics</div></div>
+  </div>
+</section>
+
+<section class="process fade-in fade-delay-7">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center">Our Process</p>
+    <h2 class="title">A Proven Approach to HR Excellence</h2><div class="line"></div>
+    <div class="grid-3">
+      <div class="card"><h3>01. Understand</h3><p>We analyze your business needs.</p></div>
+      <div class="card"><h3>02. Strategize</h3><p>We design customized HR solutions.</p></div>
+      <div class="card"><h3>03. Implement</h3><p>We execute with precision.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="resources" class="fade-in fade-delay-8">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center">Resources</p>
+    <h2 class="title">Insights & Resources</h2><div class="line"></div>
+    <div class="grid-3">
+      <div class="card"><h3>5 Strategies to Attract Top Talent in 2024</h3><p>Practical hiring insights for growing businesses.</p><b>Read More →</b></div>
+      <div class="card"><h3>How to Improve Employee Retention</h3><p>Simple HR strategies that help keep your best people.</p><b>Read More →</b></div>
+      <div class="card"><h3>Key HR Compliance Updates to Know</h3><p>Stay ahead of regulatory and workplace compliance needs.</p><b>Read More →</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta fade-in fade-delay-5" id="contact">
+  <div class="container cta-grid">
+    <div><p class="eyebrow">Book a Consultation</p><h2>Let’s Talk About Your HR Needs</h2><p>Schedule a free consultation with our HR experts today.</p></div>
+    <form><input placeholder="Full Name"><input placeholder="Email Address"><input placeholder="Phone Number"><input placeholder="Company Name"><textarea placeholder="How can we help you?"></textarea><button class="btn btn-orange">Schedule Now</button></form>
+  </div>
+</section>
+
+<footer class="fade-in fade-delay-6">
+  <div class="container footer-grid">
+    <div><h2>HR<span class="orange">Consult</span></h2><p>We help organizations unlock full potential of their people through innovative HR solutions.</p></div>
+    <div><h3>Quick Links</h3><p>About Us</p><p>Services</p><p>Industries</p><p>Careers</p></div>
+    <div><h3>Services</h3><p>Recruitment</p><p>HR Outsourcing</p><p>Payroll Management</p><p>HR Compliance</p></div>
+    <div><h3>Contact Us</h3><p>Lagos, Nigeria</p><p>info@hrconsult.com</p><p>+234 800 123 4567</p></div>
+  </div>
+</footer>
+
+<!-- WhatsApp Chatbot -->
+<div class="whatsapp-widget">
+  <div class="whatsapp-chatbox" id="whatsappChatbox">
+    <div class="wa-header">
+      <div class="wa-avatar"><i class="fa-brands fa-whatsapp"></i></div>
+      <div>
+        <h4>HRConsult Assistant</h4>
+        <small>Typically replies instantly</small>
+      </div>
+    </div>
+
+    <div class="wa-body">
+      <div class="wa-message">
+        Hello 👋 Welcome to HRConsult. How can we help your business today?
+      </div>
+
+      <div class="wa-options">
+        <button class="wa-option" data-msg="Hello HRConsult, I need help with recruitment and talent acquisition.">Recruitment & Talent Acquisition</button>
+        <button class="wa-option" data-msg="Hello HRConsult, I want to discuss HR outsourcing for my company.">HR Outsourcing</button>
+        <button class="wa-option" data-msg="Hello HRConsult, I need payroll management support.">Payroll Management</button>
+        <button class="wa-option" data-msg="Hello HRConsult, I need HR compliance advisory.">HR Compliance</button>
+        <button class="wa-option" data-msg="Hello HRConsult, I would like to book a consultation.">Book a Consultation</button>
+      </div>
+    </div>
+
+    <div class="wa-footer">
+      <input type="text" id="waCustomMessage" placeholder="Type your message..." />
+      <button class="wa-send" id="waSendBtn" type="button">➤</button>
+    </div>
+  </div>
+
+  <button class="whatsapp-float" id="whatsappToggle" type="button"><i class="fa-brands fa-whatsapp"></i></button>
+</div>
+
+
+<script>
+  const whatsappNumber = "2348001234567"; // Replace with your real WhatsApp number, e.g. 2348035828149
+  const whatsappToggle = document.getElementById("whatsappToggle");
+  const whatsappChatbox = document.getElementById("whatsappChatbox");
+  const waCustomMessage = document.getElementById("waCustomMessage");
+  const waSendBtn = document.getElementById("waSendBtn");
+
+  function openWhatsApp(message){
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+  }
+
+  whatsappToggle.addEventListener("click", () => {
+    whatsappChatbox.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".wa-option").forEach(button => {
+    button.addEventListener("click", () => {
+      openWhatsApp(button.getAttribute("data-msg"));
+    });
+  });
+
+  waSendBtn.addEventListener("click", () => {
+    const message = waCustomMessage.value.trim() || "Hello HRConsult, I would like to make an enquiry.";
+    openWhatsApp(message);
+  });
+
+  waCustomMessage.addEventListener("keypress", (event) => {
+    if(event.key === "Enter"){
+      event.preventDefault();
+      waSendBtn.click();
+    }
+  });
+</script>
+
+
+<script>
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  fadeElements.forEach(element => {
+    fadeObserver.observe(element);
+  });
+</script>
+
+
+<script>
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll(".slider-dot");
+
+  let currentSlide = 0;
+
+  function showSlide(index){
+    slides.forEach(slide => slide.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+  }
+
+  function nextSlide(){
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentSlide = index;
+      showSlide(currentSlide);
+    });
+  });
+
+  setInterval(nextSlide, 5000);
+</script>
+
+</body>
+</html>
