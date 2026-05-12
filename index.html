@@ -327,8 +327,8 @@
   transform:scale(1.2);
 }
 
-/* MOBILE */
-@media(max-width:900px)
+/* HERO MOBILE */
+@media(max-width:900px){
 
   .hero{
     min-height:auto;
@@ -347,8 +347,9 @@
     font-size:17px;
   }
 
+}
 
-@media(max-width:600px)
+@media(max-width:600px){
 
   .hero-text h1{
     font-size:34px;
@@ -362,7 +363,9 @@
     margin-top:30px;
   }
 
+}
 
+/* LOGO + MOBILE NAV */
 .logo-img{
   width:180px;
   height:auto;
@@ -377,7 +380,7 @@
 }
 
 /* MOBILE NAVIGATION */
-@media(max-width:900px)
+@media(max-width:900px){
 
   nav{
     position:relative;
@@ -409,7 +412,9 @@
     width:150px;
   }
 
-  /* ABOUT SECTION */
+}
+
+/* ABOUT SECTION */
 .about-section{
   background:#061a3a;
   color:#fff;
@@ -522,6 +527,7 @@
   .about-card-wrap{
     grid-template-columns:1fr;
   }
+
 }
 
 @media(max-width:600px){
@@ -539,11 +545,15 @@
   }
 
   .about-content{
-  max-width:600px;
+    max-width:600px;
+  }
+
+  .about-grid{
+    align-items:center;
+  }
+
 }
-.about-grid{
-  align-items:center;
-}
+
 @media(min-width:1200px){
 
   .container{
@@ -558,8 +568,9 @@
     font-size:18px;
   }
 
-
 }
+
+
 
 </style>
 </head>
