@@ -8,141 +8,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-/* THEME VARIABLES */
-:root{
-  --bg:#ffffff;
-  --text:#101828;
-  --card:#ffffff;
-  --primary:#061a3a;
-  --secondary:#d4af37;
-  --muted:#667085;
-  --border:#e8edf5;
-  --section:#f8fafc;
-  --header:#ffffff;
-}
-
-/* DARK MODE */
-body.dark-mode{
-  --bg:#0b1220;
-  --text:#f1f5f9;
-  --card:#111827;
-  --primary:#f8fafc;
-  --secondary:#d4af37;
-  --muted:#cbd5e1;
-  --border:#243041;
-  --section:#111827;
-  --header:#0f172a;
-}
-
-/* APPLY VARIABLES */
-body{
-  background:var(--bg);
-  color:var(--text);
-  transition:background .4s ease,color .4s ease;
-}
-
-header{
-  background:var(--header);
-  border-bottom:1px solid var(--border);
-}
-
-.card,
-.dashboard,
-form,
-.whatsapp-chatbox,
-.stat,
-.chart{
-  background:var(--card);
-  border-color:var(--border);
-  color:var(--text);
-}
-
-.card p,
-.about-text,
-footer p,
-footer li,
-.hero p{
-  color:var(--muted);
-}
-
-.title,
-.card h3,
-.about-heading,
-.logo{
-  color:var(--primary);
-}
-
-.process{
-  background:var(--section);
-}
-
-.industry{
-  background:var(--section);
-  color:var(--primary);
-}
-
-.links{
-  background:var(--header);
-}
-
-input,
-textarea{
-  background:var(--card);
-  color:var(--text);
-  border:1px solid var(--border);
-}
-
-input::placeholder,
-textarea::placeholder{
-  color:var(--muted);
-}
-
-/* DARK MODE NAV MOBILE */
-body.dark-mode .links{
-  background:#0f172a;
-}
-
-body.dark-mode .menu-toggle{
-  color:#fff;
-}
-
-body.dark-mode .brand-grid{
-  color:#fff;
-}
-
-/* THEME TOGGLE BUTTON */
-.theme-toggle{
-  width:46px;
-  height:46px;
-  border-radius:50%;
-  border:none;
-  cursor:pointer;
-  display:grid;
-  place-items:center;
-  font-size:18px;
-  background:#d4af37;
-  color:#061a3a;
-  transition:.3s;
-}
-
-.theme-toggle:hover{
-  transform:scale(1.08);
-}
-
-.nav-actions{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-@media(max-width:900px){
-  .nav-actions{
-    margin-left:auto;
-    margin-right:15px;
-  }
-}
-
-
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:Arial,Helvetica,sans-serif;color:#101828;background:#fff;line-height:1.6}
     a{text-decoration:none;color:inherit}
@@ -712,19 +577,16 @@ body.dark-mode .brand-grid{
 <body>
 <!-- HEADER -->
 <header class="fade-in fade-delay-1">
-  <div class="nav-actions">
+  <nav class="container">
 
-  <!-- THEME TOGGLE -->
-  <button class="theme-toggle" id="themeToggle">
-    <i class="fa-solid fa-moon"></i>
-  </button>
+    <a href="index.html" class="navbar-brand">
+      <img src="images/logo.png" alt="ValuePoint Logo" class="logo-img">
+    </a>
 
-  <!-- MOBILE MENU BUTTON -->
-  <div class="menu-toggle" id="menuToggle">
-    <i class="fa-solid fa-bars"></i>
-  </div>
-
-</div>
+    <!-- Mobile Menu Button -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
 
     <!-- NAV LINKS -->
     <div class="links" id="navLinks">
@@ -1154,44 +1016,6 @@ setInterval(nextSlide, 5000);
 
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
-  });
-</script>
-
-<script>
-  const themeToggle = document.getElementById("themeToggle");
-  const body = document.body;
-  const themeIcon = themeToggle.querySelector("i");
-
-  // LOAD SAVED THEME
-  const savedTheme = localStorage.getItem("theme");
-
-  if(savedTheme === "dark"){
-    body.classList.add("dark-mode");
-    themeIcon.classList.remove("fa-moon");
-    themeIcon.classList.add("fa-sun");
-  }
-
-  // TOGGLE THEME
-  themeToggle.addEventListener("click", () => {
-
-    body.classList.toggle("dark-mode");
-
-    const isDark = body.classList.contains("dark-mode");
-
-    if(isDark){
-      localStorage.setItem("theme", "dark");
-
-      themeIcon.classList.remove("fa-moon");
-      themeIcon.classList.add("fa-sun");
-
-    }else{
-
-      localStorage.setItem("theme", "light");
-
-      themeIcon.classList.remove("fa-sun");
-      themeIcon.classList.add("fa-moon");
-    }
-
   });
 </script>
 
