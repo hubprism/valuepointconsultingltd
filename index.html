@@ -459,15 +459,86 @@
     <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80')"></div>
   </div>
 
+  <section class="hero fade-in fade-delay-2">
+
+  <div class="hero-slider">
+
+    <div class="hero-slide active"
+      style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')">
+    </div>
+
+    <div class="hero-slide"
+      style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80')">
+    </div>
+
+    <div class="hero-slide"
+      style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80')">
+    </div>
+
+    <div class="hero-slide"
+      style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=80')">
+    </div>
+
+    <div class="hero-slide"
+      style="background-image:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80')">
+    </div>
+
+  </div>
+
   <div class="hero-content">
     <div class="container hero-grid">
+
+      <!-- TEXT SLIDES -->
       <div>
-        <div class="eyebrow">Your People. Our Priority.</div>
-        <h1>Driving Measurable <span> Modern Business Value</span></h1>
-        <p>We help organizations attract, develop, and retain the right talent through smart HR solutions.</p>
-        <a class="btn btn-orange" href="#contact">Book Consultation</a>
+
+        <div class="hero-text active">
+          <div class="eyebrow">YOUR PEOPLE. OUR PRIORITY.</div>
+          <h1>Driving <span>Modern Business</span> Value</h1>
+          <p>
+            We help organisations attract, develop and retain top talent through smart HR solutions.
+          </p>
+          <a class="btn btn-orange" href="#contact">Book Consultation</a>
+        </div>
+
+        <div class="hero-text">
+          <div class="eyebrow">STRATEGIC HR CONSULTING</div>
+          <h1>Building <span>High Performance</span> Teams</h1>
+          <p>
+            Transform your workforce into a competitive advantage with our tailored HR strategies.
+          </p>
+          <a class="btn btn-orange" href="#contact">Get Started</a>
+        </div>
+
+        <div class="hero-text">
+          <div class="eyebrow">LEADERSHIP DEVELOPMENT</div>
+          <h1>Empowering <span>Leaders</span> For Growth</h1>
+          <p>
+            We equip leaders with practical skills and frameworks that drive sustainable business success.
+          </p>
+          <a class="btn btn-orange" href="#contact">Learn More</a>
+        </div>
+
+        <div class="hero-text">
+          <div class="eyebrow">HR OUTSOURCING SOLUTIONS</div>
+          <h1>Smart HR Support For <span>Growing Businesses</span></h1>
+          <p>
+            Focus on growth while we handle your HR operations with excellence and professionalism.
+          </p>
+          <a class="btn btn-orange" href="#contact">Speak With Us</a>
+        </div>
+
+        <div class="hero-text">
+          <div class="eyebrow">TALENT & ORGANISATION</div>
+          <h1>Helping Businesses <span>Scale With Confidence</span></h1>
+          <p>
+            From recruitment to workforce strategy, we help businesses build winning organisations.
+          </p>
+          <a class="btn btn-orange" href="#contact">Contact Us</a>
+        </div>
+
       </div>
 
+      <!-- DASHBOARD -->
       <div class="dashboard">
         <h3>HR Dashboard Overview</h3>
 
@@ -501,6 +572,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -697,32 +769,47 @@ Onikan, Lagos Island, Lagos, Nigeria</p><p>info@valuepointconsultingltd.com</p><
 
 
 <script>
-  const slides = document.querySelectorAll(".hero-slide");
-  const dots = document.querySelectorAll(".slider-dot");
 
-  let currentSlide = 0;
+const slides = document.querySelectorAll(".hero-slide");
+const dots = document.querySelectorAll(".slider-dot");
+const texts = document.querySelectorAll(".hero-text");
 
-  function showSlide(index){
-    slides.forEach(slide => slide.classList.remove("active"));
-    dots.forEach(dot => dot.classList.remove("active"));
+let currentSlide = 0;
 
-    slides[index].classList.add("active");
-    dots[index].classList.add("active");
-  }
+function showSlide(index){
 
-  function nextSlide(){
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      currentSlide = index;
-      showSlide(currentSlide);
-    });
+  slides.forEach(slide => {
+    slide.classList.remove("active");
   });
 
-  setInterval(nextSlide, 5000);
+  dots.forEach(dot => {
+    dot.classList.remove("active");
+  });
+
+  texts.forEach(text => {
+    text.classList.remove("active");
+  });
+
+  slides[index].classList.add("active");
+  dots[index].classList.add("active");
+  texts[index].classList.add("active");
+}
+
+function nextSlide(){
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+dots.forEach((dot, index) => {
+
+  dot.addEventListener("click", () => {
+    currentSlide = index;
+    showSlide(currentSlide);
+  });
+
+});
+
+setInterval(nextSlide, 5000);
 
 
   
