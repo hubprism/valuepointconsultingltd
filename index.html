@@ -234,13 +234,17 @@
 
 /* Hero Slider */
 /* HERO SECTION */
+/* HERO SECTION */
 .hero{
   position:relative;
   overflow:hidden;
-  min-height:100vh;
+  min-height:650px;
+  height:85vh;
+  max-height:750px;
   display:flex;
   align-items:center;
   color:white;
+  padding:120px 0 80px;
 }
 
 .hero-slider{
@@ -255,8 +259,8 @@
   opacity:0;
   transition:opacity 1.2s ease-in-out;
   background-size:cover;
-  background-position:center;
-  filter:brightness(1.05);
+  background-position:center center;
+  background-repeat:no-repeat;
 }
 
 .hero-slide.active{
@@ -267,10 +271,11 @@
   position:relative;
   z-index:3;
   width:100%;
+  padding-top:20px;
 }
 
 .hero-text{
-  max-width:650px;
+  max-width:600px;
   opacity:0;
   transform:translateY(40px);
   transition:all .9s ease;
@@ -335,8 +340,9 @@
 @media(max-width:900px){
 
   .hero{
-    min-height:auto;
-    padding:120px 0 70px;
+    height:auto;
+    min-height:520px;
+    padding:110px 0 70px;
   }
 
   .hero-grid{
@@ -345,22 +351,29 @@
 
   .hero-text h1{
     font-size:42px;
+    line-height:1.15;
   }
 
   .hero-text p{
     font-size:17px;
+    line-height:1.7;
   }
 
 }
 
 @media(max-width:600px){
 
+  .hero{
+    min-height:480px;
+    padding:100px 0 60px;
+  }
+
   .hero-text h1{
-    font-size:34px;
+    font-size:32px;
   }
 
   .hero-text p{
-    font-size:16px;
+    font-size:15px;
   }
 
   .dashboard{
@@ -368,7 +381,6 @@
   }
 
 }
-
 /* LOGO + MOBILE NAV */
 .logo-img{
   width:180px;
