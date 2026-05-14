@@ -275,10 +275,18 @@
 }
 
 .hero-text{
-  max-width:600px;
+  max-width:650px;
+  min-height:320px; /* keeps all sliders same height */
+  
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
   opacity:0;
   transform:translateY(40px);
   transition:all .9s ease;
+
+  position:relative;
 }
 
 .hero-text.active{
@@ -288,17 +296,21 @@
 
 .hero-text h1{
   font-size:64px;
-  line-height:1.05;
-  margin-bottom:22px;
+  line-height:1.1;
+  margin-bottom:24px;
   color:#fff;
+
+  max-width:620px; /* forces consistent line break */
 }
 
 .hero-text p{
   font-size:20px;
   color:#fff;
   margin-bottom:30px;
-  max-width:620px;
+  max-width:580px;
+  line-height:1.7;
 }
+
 
 .hero-text .eyebrow{
   color:#d4af37;
