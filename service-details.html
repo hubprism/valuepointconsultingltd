@@ -1,209 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Details | ValuePoint Consulting Limited</title>
 
-  <title>Our Services | ValuePoint Consulting</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
 
-  <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f5f5f5;
+  color:#111827;
+  line-height:1.8;
+}
 
-    body{
-      font-family:Arial, Helvetica, sans-serif;
-      color:#101828;
-      line-height:1.7;
-      background:#f8fafc;
-    }
+a{
+  text-decoration:none;
+}
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
 
-    .container{
-      width:min(1180px,92%);
-      margin:auto;
-    }
+/* HEADER */
 
-    header{
-      background:#fff;
-      border-bottom:1px solid #eee;
-      position:sticky;
-      top:0;
-      z-index:100;
-    }
+header{
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+}
 
-    nav{
-      height:80px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+nav{
+  height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    .logo img{
-      width:180px;
-    }
+.logo img{
+  width:190px;
+}
 
-    .back-btn{
-      background:#061a3a;
-      color:#fff;
-      padding:12px 20px;
-      border-radius:8px;
-      font-weight:700;
-    }
+.back-btn{
+  background:#061a3a;
+  color:#fff;
+  padding:16px 28px;
+  border-radius:10px;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:.3s;
+}
 
-    .hero{
-      background:linear-gradient(135deg,#031226,#061a3a);
-      color:#fff;
-      padding:100px 0;
-      text-align:center;
-    }
+.back-btn:hover{
+  background:#0b2d63;
+}
 
-    .hero h1{
-      font-size:58px;
-      margin-bottom:20px;
-    }
+/* HERO */
 
-    .hero span{
-      color:#d4af37;
-    }
+.hero{
+  background:
+  linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+  url('images/service-banner.jpg') center/cover;
+  padding:110px 0;
+  text-align:center;
+  color:#fff;
+}
 
-    .hero p{
-      max-width:800px;
-      margin:auto;
-      color:#d6dfeb;
-      font-size:18px;
-    }
+.hero h1{
+  font-size:52px;
+  margin-bottom:12px;
+}
 
-    section{
-      padding:80px 0;
-    }
+.hero p{
+  font-size:18px;
+  max-width:850px;
+  margin:auto;
+  line-height:1.8;
+  color:#f3f4f6;
+}
 
-    .service-box{
-      background:#fff;
-      border-radius:18px;
-      padding:40px;
-      margin-bottom:30px;
-      box-shadow:0 10px 35px rgba(0,0,0,.06);
-      border:1px solid #e8edf5;
-    }
+/* MAIN SECTION */
 
-    .service-box i{
-      width:70px;
-      height:70px;
-      background:#eef4ff;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      font-size:30px;
-      color:#061a3a;
-      margin-bottom:20px;
-    }
+.service-section{
+  padding:80px 0;
+}
 
-    .service-box h2{
-      color:#061a3a;
-      margin-bottom:15px;
-      font-size:34px;
-    }
+.service-layout{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:50px;
+  align-items:start;
+}
 
-    .service-box p{
-      color:#667085;
-      margin-bottom:18px;
-      font-size:16px;
-    }
+/* LEFT */
 
-    .service-box ul{
-      padding-left:20px;
-      color:#475467;
-    }
+.service-content{
+  background:#fff;
+  border-radius:20px;
+  padding:50px;
+  box-shadow:0 8px 30px rgba(0,0,0,.05);
+}
 
-    .service-box li{
-      margin-bottom:10px;
-    }
+.service-icon{
+  width:80px;
+  height:80px;
+  border-radius:18px;
+  background:#eef2ff;
+  display:grid;
+  place-items:center;
+  color:#061a3a;
+  font-size:34px;
+  margin-bottom:30px;
+}
 
-    .cta{
-      background:#061a3a;
-      color:#fff;
-      text-align:center;
-      border-radius:24px;
-      padding:60px 30px;
-    }
+.service-content h2{
+  font-size:48px;
+  line-height:1.2;
+  margin-bottom:24px;
+  color:#061a3a;
+}
 
-    .cta h2{
-      font-size:42px;
-      margin-bottom:15px;
-    }
+.service-content p{
+  font-size:18px;
+  color:#4b5563;
+  margin-bottom:28px;
+}
 
-    .cta p{
-      color:#d6dfeb;
-      margin-bottom:30px;
-    }
+.service-content ul{
+  padding-left:20px;
+}
 
-    .btn{
-      display:inline-block;
-      background:#d4af37;
-      color:#fff;
-      padding:14px 28px;
-      border-radius:8px;
-      font-weight:700;
-    }
+.service-content li{
+  margin-bottom:18px;
+  font-size:18px;
+  color:#374151;
+}
 
-    footer{
-      background:#031226;
-      color:#fff;
-      padding:40px 0;
-      text-align:center;
-      margin-top:60px;
-    }
+/* IMAGES */
 
-    footer p{
-      color:#cbd5e1;
-    }
+.service-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:45px;
+}
 
-    @media(max-width:768px){
+.service-images img{
+  width:100%;
+  height:270px;
+  object-fit:cover;
+  border-radius:16px;
+}
 
-      .hero h1{
-        font-size:40px;
-      }
+/* SIDEBAR */
 
-      .service-box{
-        padding:28px;
-      }
+.sidebar{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
 
-      .service-box h2{
-        font-size:28px;
-      }
+.sidebar-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  padding:28px 30px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:#111827;
+  font-size:22px;
+  font-weight:700;
+  transition:.3s;
+}
 
-    }
+.sidebar-card:hover{
+  background:#061a3a;
+  color:#fff;
+}
 
-  </style>
+.sidebar-card.active{
+  background:#000;
+  color:#fff;
+}
 
+.sidebar-card i{
+  font-size:18px;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+  .service-layout{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .service-content{
+    padding:35px;
+  }
+
+  .service-content h2{
+    font-size:34px;
+  }
+
+  .service-content p,
+  .service-content li{
+    font-size:16px;
+  }
+
+  .service-images{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:500px){
+
+  nav{
+    height:auto;
+    padding:20px 0;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .logo img{
+    width:160px;
+  }
+
+  .hero{
+    padding:90px 0;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .service-content{
+    padding:25px;
+  }
+
+  .sidebar-card{
+    font-size:18px;
+    padding:22px;
+  }
+
+}
+
+</style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header>
-  <nav class="container">
 
-    <a href="index.html" class="logo">
-      <img src="images/logo.png" alt="ValuePoint Logo">
-    </a>
+  <div class="container">
 
-    <a href="index.html" class="back-btn">
-      ← Back Home
-    </a>
+    <nav>
 
-  </nav>
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="ValuePoint Logo">
+      </a>
+
+      <a href="index.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back Home
+      </a>
+
+    </nav>
+
+  </div>
+
 </header>
 
 <!-- HERO -->
@@ -211,197 +302,95 @@
 
   <div class="container">
 
-    <h1>
-      HR Advisory <span>& Outsourcing</span>
-    </h1>
+    <h1>Recruitment & Talent Placement</h1>
 
     <p>
-      We provide strategic HR and management consulting solutions
-      that help businesses build high-performing teams, improve
-      operational efficiency, and achieve sustainable growth.
+      We provide strategic HR and management consulting solutions that help
+      businesses build high-performing teams, improve operational efficiency,
+      and achieve sustainable growth.
     </p>
 
   </div>
 
 </section>
 
-<!-- SERVICES -->
-<section>
+<!-- MAIN -->
+<section class="service-section">
 
   <div class="container">
 
-    <!-- Recruitment -->
-    <div class="service-box">
+    <div class="service-layout">
 
-      <i class="fa-solid fa-users"></i>
+      <!-- LEFT -->
+      <div class="service-content">
 
-      <h2>HR Advisory & Outsourcing</h2>
+        <div class="service-icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
 
-      <p>
-        Our HR Advisory & Outsourcing services provide businesses with professional HR support, 
-        guidance, and operational management without the need for a full in-house HR department.
-      </p>
+        <h2>Recruitment & Talent Placement</h2>
 
-      <ul>
-        <li>Executive Search & Hiring</li>
-        <li>Talent Screening & Assessment</li>
-        <li>Graduate Recruitment</li>
-        <li>Permanent & Contract Staffing</li>
-        <li>Interview Coordination</li>
-      </ul>
+        <p>
+          We help organisations identify, attract, assess, and hire exceptional
+          talent across all levels. Our recruitment solutions are designed to
+          match the right people with the right roles while ensuring alignment
+          with your company culture and long-term business objectives.
+        </p>
 
-    </div>
+        <ul>
+          <li>Executive Search & Hiring</li>
+          <li>Talent Screening & Assessment</li>
+          <li>Graduate Recruitment</li>
+          <li>Leadership Hiring Solutions</li>
+          <li>Workforce Planning & Talent Strategy</li>
+          <li>Industry-Specific Recruitment Support</li>
+        </ul>
 
-    <!-- HR Advisory -->
-    <div class="service-box">
+        <div class="service-images">
 
-      <i class="fa-solid fa-handshake"></i>
+          <img src="images/service1.jpg" alt="Service Image">
 
-      <h2>HR Advisory & Outsourcing</h2>
+          <img src="images/service2.jpg" alt="Service Image">
 
-      <p>
-        Our HR outsourcing solutions allow businesses to focus on
-        growth while we manage critical HR operations efficiently.
-      </p>
+        </div>
 
-      <ul>
-        <li>HR Policy Development</li>
-        <li>Employee Relations Support</li>
-        <li>Performance Management</li>
-        <li>HR Compliance & Documentation</li>
-        <li>Virtual HR Support</li>
-      </ul>
+      </div>
 
-    </div>
+      <!-- RIGHT -->
+      <div class="sidebar">
 
-    <!-- HR System -->
-    <div class="service-box">
+        <a href="#" class="sidebar-card">
+          Strategy Articulation
+          <i class="fa-solid fa-angle-right"></i>
+        </a>
 
-      <i class="fa-solid fa-building"></i>
+        <a href="#" class="sidebar-card active">
+          Talent Sourcing
+          <i class="fa-solid fa-angle-right"></i>
+        </a>
 
-      <h2>Building a Standard HR System</h2>
+        <a href="#" class="sidebar-card">
+          HR Outsourcing
+          <i class="fa-solid fa-angle-right"></i>
+        </a>
 
-      <p>
-        We design scalable HR structures and frameworks tailored
-        to organisational growth and compliance requirements.
-      </p>
+        <a href="#" class="sidebar-card">
+          Performance Management
+          <i class="fa-solid fa-angle-right"></i>
+        </a>
 
-      <ul>
-        <li>HR Policies & Procedures</li>
-        <li>Employee Handbook Development</li>
-        <li>Organisational Structure Design</li>
-        <li>Job Description Development</li>
-        <li>HR Process Automation</li>
-      </ul>
+        <a href="#" class="sidebar-card">
+          Change Management
+          <i class="fa-solid fa-angle-right"></i>
+        </a>
 
-    </div>
-
-    <!-- Leadership -->
-    <div class="service-box">
-
-      <i class="fa-solid fa-graduation-cap"></i>
-
-      <h2>Training & Leadership Development</h2>
-
-      <p>
-        We deliver impactful learning experiences that improve
-        leadership effectiveness and workforce capability.
-      </p>
-
-      <ul>
-        <li>Leadership Coaching</li>
-        <li>Management Training</li>
-        <li>Communication Skills</li>
-        <li>Team Building Workshops</li>
-        <li>Employee Capacity Development</li>
-      </ul>
-
-    </div>
-
-    <!-- Engagement -->
-    <div class="service-box">
-
-      <i class="fa-solid fa-chart-line"></i>
-
-      <h2>Employee Engagement Programs</h2>
-
-      <p>
-        We help organisations improve employee satisfaction,
-        productivity, retention, and workplace culture.
-      </p>
-
-      <ul>
-        <li>Employee Engagement Surveys</li>
-        <li>Recognition Programs</li>
-        <li>Culture Transformation</li>
-        <li>Wellness Initiatives</li>
-        <li>Retention Strategies</li>
-      </ul>
-
-    </div>
-
-    <!-- Strategy -->
-    <div class="service-box">
-
-      <i class="fa-solid fa-shield"></i>
-
-      <h2>HR & People Strategy</h2>
-
-      <p>
-        We align HR initiatives with business goals to drive
-        measurable organisational performance.
-      </p>
-
-      <ul>
-        <li>Workforce Planning</li>
-        <li>Succession Planning</li>
-        <li>Culture Strategy</li>
-        <li>Change Management</li>
-        <li>Business Transformation Support</li>
-      </ul>
+      </div>
 
     </div>
 
   </div>
 
 </section>
-
-<!-- CTA -->
-<section>
-
-  <div class="container">
-
-    <div class="cta">
-
-      <h2>Ready to Transform Your Workforce?</h2>
-
-      <p>
-        Speak with our HR experts today and discover how
-        ValuePoint Consulting can support your organisation.
-      </p>
-
-      <a href="index.html#contact" class="btn">
-        Book Consultation
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-
-  <div class="container">
-
-    <p>
-      © 2026 ValuePoint Consulting Limited. All Rights Reserved.
-    </p>
-
-  </div>
-
-</footer>
 
 </body>
 </html>
