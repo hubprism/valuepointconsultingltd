@@ -130,6 +130,44 @@ nav{
   box-shadow:0 8px 30px rgba(0,0,0,.05);
 }
 
+/* CUSTOM BULLET LIST */
+
+.list-title{
+  font-size: 20px;
+  font-weight: 700;
+  color: #061a3a;
+  margin-top: 25px;
+  margin-bottom: 18px;
+}
+
+.custom-list{
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 35px;
+}
+
+.custom-list li{
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #374151;
+  line-height: 1.8;
+}
+
+/* BLUE CIRCLE ICON */
+
+.custom-list li::before{
+  content: "\f058";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 3px;
+  color: #2563eb;
+  font-size: 20px;
+}
+
 .service-icon{
   width:80px;
   height:80px;
@@ -366,25 +404,35 @@ nav{
            operational disruptions, and financial losses.
         </p>
 
-        <b>Effective recruitment helps businesses</b>
+      <h4 class="list-title">
+  Effective recruitment helps businesses
+</h4>
 
-          <ul>Build high-performing teams</ul>
-          <ul>Reduce hiring risks</ul>
-          <ul>Improve workforce productivity </ul>
-          <ul>Strengthen organizational culture</ul>
-          <ul>Support long-term business growth</ul><br>
-          
-          <h3>Our Approach</h3>
+<ul class="custom-list">
+  <li>Build high-performing teams</li>
+  <li>Reduce hiring risks</li>
+  <li>Improve workforce productivity</li>
+  <li>Strengthen organizational culture</li>
+  <li>Support long-term business growth</li>
+</ul>
+
+<h3>Our Approach</h3>
+
 <p>
-          Our recruitment process is structured, data-driven, and tailored to each client’s workforce needs. 
-        </p>
-        <b>We:</b>
-         <ul>Understand business and role requirements </ul>
-          <ul>Develop targeted recruitment strategies </ul>
-          <ul>Source and screen qualified candidates </ul>
-          <ul>Conduct assessments and interviews</ul>
-          <ul>Support onboarding and integration </ul><br>
-          <p>We focus on delivering quality talent that contributes meaningfully to organizational success.</p>
+  Our recruitment process is structured, data-driven, and tailored
+  to each client’s workforce needs.
+</p>
+
+<h4 class="list-title">We:</h4>
+
+<ul class="custom-list">
+  <li>Understand business and role requirements</li>
+  <li>Develop targeted recruitment strategies</li>
+  <li>Source and screen qualified candidates</li>
+  <li>Conduct assessments and interviews</li>
+  <li>Support onboarding and integration</li>
+</ul>
+
       </div>
 
       <!-- RIGHT -->
