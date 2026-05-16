@@ -199,17 +199,32 @@ nav{
 
 /* TYPING EFFECT */
 
+/* HERO TYPING EFFECT */
+
 .hero h1{
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 4px solid #d4af37;
-  width: 0;
+  font-size:64px;
+  font-weight:800;
+  margin-bottom:18px;
+  line-height:1.2;
+  color:#fff;
+
+  overflow:hidden;
+  white-space:nowrap;
+  border-right:4px solid #d4af37;
+
+  width:0;
+
   animation:
-    typing 3s steps(30, end) forwards,
+    typing 4s steps(32,end) forwards,
+    erase 3s steps(32,end) forwards,
     blink .8s infinite;
+
+  animation-iteration-count: infinite;
+
+  animation-delay: 0s, 10s, 0s;
 }
 
-/* TYPING ANIMATION */
+/* TYPE TEXT */
 @keyframes typing{
   from{
     width:0;
@@ -220,13 +235,23 @@ nav{
   }
 }
 
-/* CURSOR BLINK */
+/* ERASE TEXT */
+@keyframes erase{
+  from{
+    width:100%;
+  }
+
+  to{
+    width:0;
+  }
+}
+
+/* CURSOR */
 @keyframes blink{
   50%{
     border-color:transparent;
   }
 }
-
 .hero p{
   font-size: 20px;
   max-width: 900px;
