@@ -201,6 +201,8 @@ nav{
 
 /* HERO TYPING EFFECT */
 
+/* HERO TYPING EFFECT */
+
 .hero h1{
   font-size:64px;
   font-weight:800;
@@ -215,13 +217,13 @@ nav{
   width:0;
 
   animation:
-    typing 5s steps(32,end) forwards,
-    erase 6s steps(32,end) forwards,
+    typing 5s steps(32,end),
+    deleting 6s steps(32,end) 6s,
     blink .8s infinite;
 
   animation-iteration-count: infinite;
 
-  animation-delay: 0s, 10s, 0s;
+  animation-duration: 10s, 10s, .8s;
 }
 
 /* TYPE TEXT */
@@ -235,8 +237,8 @@ nav{
   }
 }
 
-/* ERASE TEXT */
-@keyframes erase{
+/* DELETE TEXT */
+@keyframes deleting{
   from{
     width:100%;
   }
@@ -246,6 +248,12 @@ nav{
   }
 }
 
+/* CURSOR BLINK */
+@keyframes blink{
+  50%{
+    border-color:transparent;
+  }
+}
 /* CURSOR */
 @keyframes blink{
   50%{
