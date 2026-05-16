@@ -484,7 +484,32 @@ nav{
     padding:22px;
   }
 
- 
+ /* SCROLL FADE ANIMATION */
+
+.fade-up{
+  opacity:0;
+  transform:translateY(40px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.fade-up.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* DELAYS */
+
+.delay-1{transition-delay:.1s;}
+.delay-2{transition-delay:.2s;}
+.delay-3{transition-delay:.3s;}
+.delay-4{transition-delay:.4s;}
+.delay-5{transition-delay:.5s;}
+.delay-6{transition-delay:.6s;}
+.delay-7{transition-delay:.7s;}
+.delay-8{transition-delay:.8s;}
+
 }
 
 </style>
@@ -553,9 +578,11 @@ nav{
           <i class="fa-solid fa-users"></i>
         </div>
 
-        <h2>Recruitment & Talent Placement</h2>
+        <h2 class="fade-up delay-1">
+  Recruitment & Talent Placement
+</h2>
 
-        <p>
+        <p class="fade-up delay-2">
           We help organisations identify, attract, assess, and hire exceptional
           talent across all levels. Our recruitment solutions are designed to
           match the right people with the right roles while ensuring alignment
@@ -563,23 +590,23 @@ nav{
         </p>
  <div class="service-images">
 
-          <img src="images/serv1.png" alt="Service Image">
+          <img class="fade-up delay-3" src="images/serv1.png" alt="Service Image">
 
-          <img src="images/serv1.png" alt="Service Image">
+          <img class="fade-up delay-3" src="images/serv1.png" alt="Service Image">
 
         </div>
-<h3>Why It Matters</h3>
-<p>
-          The success of any organization depends largely on the quality of its people.
+<h3 class="fade-up delay-4">Why It Matters</h3>
+<p class="fade-up delay-5">
+             The success of any organization depends largely on the quality of its people.
            Poor hiring decisions can lead to low productivity, increased turnover, 
            operational disruptions, and financial losses.
         </p>
 
-      <h4 class="list-title">
+      <h4 class="list-title fade-up delay-6">
   Effective recruitment helps businesses
 </h4>
 
-<ul class="custom-list">
+<ul class="custom-list fade-up delay-7">
   <li>Build high-performing teams</li>
   <li>Reduce hiring risks</li>
   <li>Improve workforce productivity</li>
@@ -728,6 +755,32 @@ nav{
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
+</script>
+
+<script>
+
+const fadeElements = document.querySelectorAll(".fade-up");
+
+const observer = new IntersectionObserver((entries)=>{
+
+  entries.forEach((entry)=>{
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add("show");
+
+    }
+
+  });
+
+},{
+  threshold:0.15
+});
+
+fadeElements.forEach((el)=>{
+  observer.observe(el);
+});
+
 </script>
 </body>
 </html>
