@@ -234,8 +234,6 @@
 
 /* Hero Slider */
 /* HERO SECTION */
-/* HERO SECTION */
-/* HERO SECTION */
 .hero{
   position:relative;
   overflow:hidden;
@@ -580,6 +578,76 @@
   padding:28px 24px;
   border-radius:18px;
   backdrop-filter:blur(10px);
+}
+
+/* WHY CHOOSE US ACCORDION */
+.why-card{
+  grid-column:span 2;
+  width:100%;
+}
+
+.accordion{
+  margin-top:20px;
+}
+
+.accordion-item{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  overflow:hidden;
+  margin-bottom:14px;
+  background:rgba(255,255,255,.04);
+}
+
+.accordion-header{
+  width:100%;
+  background:none;
+  border:none;
+  color:#fff;
+  padding:20px 24px;
+  font-size:17px;
+  font-weight:700;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  text-align:left;
+}
+
+.accordion-header span{
+  font-size:24px;
+  color:#d4af37;
+  transition:.3s;
+}
+
+.accordion-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .4s ease;
+  padding:0 24px;
+}
+
+.accordion-content p{
+  color:#d6dfeb;
+  padding-bottom:22px;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.accordion-item.active .accordion-content{
+  max-height:220px;
+}
+
+.accordion-item.active .accordion-header span{
+  transform:rotate(45deg);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .why-card{
+    grid-column:span 1;
+  }
+
 }
 
 .about-card h3{
@@ -966,21 +1034,90 @@ style="background-image:url('images/img5.jpg')">
       </div>
 
       
-      <!-- WHY CHOOSE US-->
-      <div class="about-card">
-        <h3>Why Choose Us</h3>
+      <!-- WHY CHOOSE US -->
+<div class="about-card why-card">
 
+  <h3>Why Choose Us</h3>
+
+  <div class="accordion">
+
+    <!-- ITEM 1 -->
+    <div class="accordion-item active">
+      <button class="accordion-header">
+        Bespoke Solutions
+        <span>+</span>
+      </button>
+
+      <div class="accordion-content">
         <p>
-          In a market saturated with generic HR solutions, ValuePoint stands apart by offering:</p>
-         <ul>
-          <li><b>Bespoke Solutions:</b>  Every engagement is tailored to the unique context, culture, and strategic ambitions of the client.</li>
-<li>Sector Expertise:</b>  Deep domain knowledge in high-growth Nigerian industries ensures our recommendations are commercially grounded.</li>
-<li><b>Results Orientation:</b>  We define success by measurable outcomes, not deliverable volume.</li>
-<li><b>Senior-Level Attention:</b>  Our clients receive direct access to experienced consultants throughout the engagement.</li>
-<li><b>End-to-End Capability:</b>  From strategy to implementation, we are with you every step of the way.</li>
-
-         </ul>
+          Every engagement is tailored to the unique context,
+          culture, and strategic ambitions of the client.
+        </p>
       </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        Sector Expertise
+        <span>+</span>
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Deep domain knowledge in high-growth Nigerian industries
+          ensures our recommendations are commercially grounded.
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        Results Orientation
+        <span>+</span>
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          We define success by measurable outcomes,
+          not deliverable volume.
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        Senior-Level Attention
+        <span>+</span>
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          Our clients receive direct access to experienced consultants
+          throughout the engagement.
+        </p>
+      </div>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        End-to-End Capability
+        <span>+</span>
+      </button>
+
+      <div class="accordion-content">
+        <p>
+          From strategy to implementation,
+          we are with you every step of the way.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
     </div>
 
   </div>
@@ -1178,6 +1315,30 @@ setInterval(nextSlide, 5000);
 
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
+  });
+</script>
+
+<script>
+  const accordionItems = document.querySelectorAll(".accordion-item");
+
+  accordionItems.forEach(item => {
+
+    const header = item.querySelector(".accordion-header");
+
+    header.addEventListener("click", () => {
+
+      accordionItems.forEach(otherItem => {
+
+        if(otherItem !== item){
+          otherItem.classList.remove("active");
+        }
+
+      });
+
+      item.classList.toggle("active");
+
+    });
+
   });
 </script>
 
