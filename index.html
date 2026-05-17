@@ -12,6 +12,74 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
+    /* TEAM SECTION */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.team-card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 28px rgba(16,24,40,.08);
+  border:1px solid #e8edf5;
+  transition:.35s ease;
+}
+
+.team-card:hover{
+  transform:translateY(-8px);
+}
+
+.team-card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  display:block;
+}
+
+.team-content{
+  padding:25px;
+}
+
+.team-content h3{
+  color:#061a3a;
+  margin-bottom:8px;
+  font-size:24px;
+}
+
+.team-role{
+  display:inline-block;
+  color:#d4af37;
+  font-weight:700;
+  margin-bottom:14px;
+  font-size:14px;
+}
+
+.team-content p{
+  color:#667085;
+  font-size:15px;
+  line-height:1.8;
+}
+
+/* TABLET */
+@media(max-width:900px){
+
+  .team-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  .team-grid{
+    grid-template-columns:1fr;
+  }
+
+}
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:Arial,Helvetica,sans-serif;color:#101828;background:#fff;line-height:1.6}
     a{text-decoration:none;color:inherit}
@@ -868,7 +936,7 @@
       <a href="#services">Services</a>
       <a href="#industries">Industries</a>
       <a href="#careers">Careers</a>
-      <a href="#resources">Resources</a>
+      <a href="#team">Our Team</a>
       <a href="#contact">Contact</a>
 
       <a class="btn btn-dark" href="#contact">
@@ -1282,16 +1350,93 @@ style="background-image:url('images/img5.jpg')">
   </div>
 </section>
 
-<section id="resources" class="fade-in fade-delay-8">
+<!-- OUR TEAM MEMBERS -->
+<section id="team" class="fade-in fade-delay-8">
+
   <div class="container">
-    <p class="eyebrow" style="text-align:center">Resources</p>
-    <h2 class="title">Insights & Resources</h2><div class="line"></div>
-    <div class="grid-3">
-      <div class="card"><h3>5 Strategies to Attract Top Talent in 2024</h3><p>Practical hiring insights for growing businesses.</p><b>Read More →</b></div>
-      <div class="card"><h3>How to Improve Employee Retention</h3><p>Simple HR strategies that help keep your best people.</p><b>Read More →</b></div>
-      <div class="card"><h3>Key HR Compliance Updates to Know</h3><p>Stay ahead of regulatory and workplace compliance needs.</p><b>Read More →</b></div>
+
+    <p class="eyebrow" style="text-align:center">
+      Our Team
+    </p>
+
+    <h2 class="title">
+      Meet Our <span class="orange">Team Members</span>
+    </h2>
+
+    <div class="line"></div>
+
+    <div class="team-grid">
+
+      <!-- TEAM MEMBER 1 -->
+      <div class="team-card">
+
+        <img src="images/osayi.jpg" alt="Team Member">
+
+        <div class="team-content">
+          <h3>Osayi Uuzebor Bsc, Msc, ACIPM, HRPL</h3>
+
+          <span class="team-role">
+            Managing Consultant
+          </span>
+
+          <p>
+           Osayi is a versatile, excellence-driven HR leader with core competencies in people and culture transformation,
+            leadership development, talent management, people analytics, learning and development as well as coaching,
+             mentoring and counselling. His extensive years of experience span across the Financial and Investment sectors, 
+             Real Estate, E-Commerce, FMCG, Information Technology, and Education.
+          </p>
+          <p>Osayi is a certified Human Resource professional and an Associate Member of the Chartered Institute of Personnel Management of Nigeria (ACIPM). He holds a Bachelors degree in Business Administration from the University of Benin and a Master's degree in Organizational Behaviour from the University of Lagos, Nigeria. He also have a training from the School of Consulting, where he had in-depth exposure in the field of Management & Human Resources Consulting.</p>
+        <p>Passionate about learning and sharing knowledge, He has been called upon to facilitate a training at Leadway Learning Academy and also he has attended several professional training and courses and earned certificates in the areas of Employment and Labour Law, Total Rewards Management, People and Data Analytics and Strategic Life Coaching Practitioner Certificate. He founded the Society for Organizational Behavior to bridge gaps and connect career professionals. An avid reader, he is highly creative in designing unique solutions to performance issues.</p>
+      <p>He is dedicated to developing leaders at all levels and empowering young people to navigate socio-economic challenges and become strong contributors to their communities. </p>  
+    <p>As part of his commitment to society, Osayi volunteers with the Lagos Food Bank Initiative (LFBI). He actively assists in distributing nutritious food to children in disadvantaged communities and schools in Lagos, repackaging and scaling food items for widows and the impoverished, and organizing food and clothing materials in the warehouse to support poverty alleviation efforts.</p>  
     </div>
+
+      </div>
+
+      <!-- TEAM MEMBER 2 -->
+      <div class="team-card">
+
+        <img src="images/team2.jpg" alt="Team Member">
+
+        <div class="team-content">
+          <h3>Jane Smith</h3>
+
+          <span class="team-role">
+            HR Advisory Lead
+          </span>
+
+          <p>
+            Specialist in workforce planning, organizational
+            development, and employee engagement strategies.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- TEAM MEMBER 3 -->
+      <div class="team-card">
+
+        <img src="images/team3.jpg" alt="Team Member">
+
+        <div class="team-content">
+          <h3>Michael Johnson</h3>
+
+          <span class="team-role">
+            Talent Acquisition Manager
+          </span>
+
+          <p>
+            Passionate about connecting businesses with top
+            talent and improving recruitment efficiency.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
 <section class="cta fade-in fade-delay-5" id="contact">
