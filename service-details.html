@@ -954,73 +954,6 @@ fadeElements.forEach((el)=>{
 
 </script>
 
-<script>
-  const whatsappNumber = "2348036157842";
-
-  const whatsappToggle =
-    document.getElementById("whatsappToggle");
-
-  const whatsappChatbox =
-    document.getElementById("whatsappChatbox");
-
-  const waCustomMessage =
-    document.getElementById("waCustomMessage");
-
-  const waSendBtn =
-    document.getElementById("waSendBtn");
-
-  function openWhatsApp(message){
-
-    const encodedMessage =
-      encodeURIComponent(message);
-
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
-      "_blank"
-    );
-
-  }
-
-  whatsappToggle.addEventListener("click", () => {
-
-    whatsappChatbox.classList.toggle("active");
-
-  });
-
-  document.querySelectorAll(".wa-option")
-  .forEach(button => {
-
-    button.addEventListener("click", () => {
-
-      openWhatsApp(
-        button.getAttribute("data-msg")
-      );
-
-    });
-
-  });
-
-  waSendBtn.addEventListener("click", () => {
-
-    const message =
-      waCustomMessage.value.trim() ||
-      "Hello ValuePoint Consulting Limited, I would like to make an enquiry.";
-
-    openWhatsApp(message);
-
-  });
-
-  waCustomMessage.addEventListener("keypress", (event) => {
-
-    if(event.key === "Enter"){
-
-      event.preventDefault();
-      waSendBtn.click();
-
-    }
-
-  });
-</script>
 
 <!-- WhatsApp Chatbot -->
 <div class="whatsapp-widget">
@@ -1100,5 +1033,74 @@ fadeElements.forEach((el)=>{
   </button>
 
 </div>
+
+<script>
+  const whatsappNumber = "2348036157842";
+
+  const whatsappToggle =
+    document.getElementById("whatsappToggle");
+
+  const whatsappChatbox =
+    document.getElementById("whatsappChatbox");
+
+  const waCustomMessage =
+    document.getElementById("waCustomMessage");
+
+  const waSendBtn =
+    document.getElementById("waSendBtn");
+
+  function openWhatsApp(message){
+
+    const encodedMessage =
+      encodeURIComponent(message);
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
+      "_blank"
+    );
+
+  }
+
+  whatsappToggle.addEventListener("click", () => {
+
+    whatsappChatbox.classList.toggle("active");
+
+  });
+
+  document.querySelectorAll(".wa-option")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      openWhatsApp(
+        button.getAttribute("data-msg")
+      );
+
+    });
+
+  });
+
+  waSendBtn.addEventListener("click", () => {
+
+    const message =
+      waCustomMessage.value.trim() ||
+      "Hello ValuePoint Consulting Limited, I would like to make an enquiry.";
+
+    openWhatsApp(message);
+
+  });
+
+  waCustomMessage.addEventListener("keypress", (event) => {
+
+    if(event.key === "Enter"){
+
+      event.preventDefault();
+      waSendBtn.click();
+
+    }
+
+  });
+</script>
+
 </body>
 </html>
