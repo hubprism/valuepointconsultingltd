@@ -511,6 +511,174 @@ nav{
 
  }
 
+/* WhatsApp Chatbot */
+.whatsapp-widget{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:9999;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.whatsapp-chatbox{
+  width:330px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+  overflow:hidden;
+  margin-bottom:15px;
+  display:none;
+  border:1px solid #e8edf5;
+}
+
+.whatsapp-chatbox.active{
+  display:block;
+}
+
+.wa-header{
+  background:#075e54;
+  color:#fff;
+  padding:16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.wa-avatar{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#25d366;
+  display:grid;
+  place-items:center;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.wa-header h4{
+  font-size:16px;
+  margin:0;
+}
+
+.wa-header small{
+  color:#d9fff0;
+}
+
+.wa-body{
+  background:#efeae2;
+  padding:18px;
+}
+
+.wa-message{
+  background:#fff;
+  color:#111;
+  padding:12px 14px;
+  border-radius:12px;
+  font-size:14px;
+  margin-bottom:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+
+.wa-options{
+  display:grid;
+  gap:8px;
+  margin-top:10px;
+}
+
+.wa-option{
+  border:1px solid #d7efe1;
+  background:#ffffff;
+  color:#075e54;
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  text-align:left;
+  width:100%;
+}
+
+.wa-option:hover{
+  background:#e9fff2;
+}
+
+.wa-footer{
+  padding:12px;
+  background:#fff;
+  display:flex;
+  gap:8px;
+}
+
+.wa-footer input{
+  flex:1;
+  margin:0;
+  padding:12px;
+  border-radius:20px;
+  font-size:13px;
+}
+
+.wa-send{
+  width:42px;
+  height:42px;
+  min-width:42px;
+  border-radius:50%;
+  background:#25d366;
+  color:#fff;
+  border:0;
+  cursor:pointer;
+  font-size:18px;
+  display:grid;
+  place-items:center;
+  padding:0;
+}
+
+.whatsapp-float{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  background:#25d366;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:34px;
+  box-shadow:0 14px 35px rgba(37,211,102,.45);
+  cursor:pointer;
+  border:0;
+  margin-left:auto;
+  position:relative;
+  padding:0;
+}
+
+.whatsapp-float::before{
+  content:"Chat with us";
+  position:absolute;
+  right:76px;
+  white-space:nowrap;
+  background:#061a3a;
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  padding:9px 12px;
+  border-radius:999px;
+  box-shadow:0 8px 24px rgba(0,0,0,.18);
+}
+
+@media(max-width:600px){
+
+  .whatsapp-widget{
+    right:14px;
+    bottom:14px;
+  }
+
+  .whatsapp-chatbox{
+    width:calc(100vw - 28px);
+  }
+
+  .whatsapp-float::before{
+    display:none;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -750,6 +918,7 @@ nav{
   </div>
 
 </footer>
+
 <script>
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
@@ -784,5 +953,152 @@ fadeElements.forEach((el)=>{
 });
 
 </script>
+
+<script>
+  const whatsappNumber = "2348036157842";
+
+  const whatsappToggle =
+    document.getElementById("whatsappToggle");
+
+  const whatsappChatbox =
+    document.getElementById("whatsappChatbox");
+
+  const waCustomMessage =
+    document.getElementById("waCustomMessage");
+
+  const waSendBtn =
+    document.getElementById("waSendBtn");
+
+  function openWhatsApp(message){
+
+    const encodedMessage =
+      encodeURIComponent(message);
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
+      "_blank"
+    );
+
+  }
+
+  whatsappToggle.addEventListener("click", () => {
+
+    whatsappChatbox.classList.toggle("active");
+
+  });
+
+  document.querySelectorAll(".wa-option")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      openWhatsApp(
+        button.getAttribute("data-msg")
+      );
+
+    });
+
+  });
+
+  waSendBtn.addEventListener("click", () => {
+
+    const message =
+      waCustomMessage.value.trim() ||
+      "Hello ValuePoint Consulting Limited, I would like to make an enquiry.";
+
+    openWhatsApp(message);
+
+  });
+
+  waCustomMessage.addEventListener("keypress", (event) => {
+
+    if(event.key === "Enter"){
+
+      event.preventDefault();
+      waSendBtn.click();
+
+    }
+
+  });
+</script>
+
+<!-- WhatsApp Chatbot -->
+<div class="whatsapp-widget">
+
+  <div class="whatsapp-chatbox" id="whatsappChatbox">
+
+    <div class="wa-header">
+
+      <div class="wa-avatar">
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+
+      <div>
+        <h4>ValuePoint Assistant</h4>
+        <small>Typically replies instantly</small>
+      </div>
+
+    </div>
+
+    <div class="wa-body">
+
+      <div class="wa-message">
+        Hello 👋 Welcome to ValuePoint Consulting. How can we help your business today?
+      </div>
+
+      <div class="wa-options">
+
+        <button class="wa-option"
+        data-msg="Hello ValuePoint Consulting, I need help with recruitment and talent acquisition.">
+          Recruitment & Talent Acquisition
+        </button>
+
+        <button class="wa-option"
+        data-msg="Hello ValuePoint Consulting, I want to discuss HR outsourcing for my company.">
+          HR Outsourcing
+        </button>
+
+        <button class="wa-option"
+        data-msg="Hello ValuePoint Consulting, I need payroll management support.">
+          Payroll Management
+        </button>
+
+        <button class="wa-option"
+        data-msg="Hello ValuePoint Consulting, I need HR compliance advisory.">
+          HR Compliance
+        </button>
+
+        <button class="wa-option"
+        data-msg="Hello ValuePoint Consulting, I would like to book a consultation.">
+          Book a Consultation
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="wa-footer">
+
+      <input
+        type="text"
+        id="waCustomMessage"
+        placeholder="Type your message..."
+      />
+
+      <button class="wa-send" id="waSendBtn" type="button">
+        ➤
+      </button>
+
+    </div>
+
+  </div>
+
+  <button class="whatsapp-float"
+  id="whatsappToggle"
+  type="button">
+    <i class="fa-brands fa-whatsapp"></i>
+  </button>
+
+</div>
 </body>
 </html>
