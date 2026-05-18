@@ -13,6 +13,58 @@
 
   <style>
 
+    /* SCROLL TO TOP BUTTON */
+.scroll-top{
+  position:fixed;
+  right:24px;
+  bottom:105px;
+  width:55px;
+  height:55px;
+  border:none;
+  border-radius:50%;
+  background:#061a3a;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+  z-index:9998;
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(20px);
+
+  transition:
+    opacity .3s ease,
+    visibility .3s ease,
+    transform .3s ease,
+    background .3s ease;
+}
+
+.scroll-top.show{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.scroll-top:hover{
+  background:#d4af37;
+}
+
+@media(max-width:600px){
+
+  .scroll-top{
+    right:14px;
+    bottom:90px;
+    width:50px;
+    height:50px;
+    font-size:20px;
+  }
+
+}
+
     /* TEAM READ MORE */
 .team-summary{
   color:#667085;
@@ -1815,6 +1867,43 @@ setInterval(nextSlide, 5000);
     });
 
   });
+</script>
+
+<!-- SCROLL TO TOP BUTTON -->
+<button class="scroll-top" id="scrollTopBtn">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+
+const scrollTopBtn =
+  document.getElementById("scrollTopBtn");
+
+/* SHOW BUTTON WHEN USER SCROLLS */
+window.addEventListener("scroll", () => {
+
+  if(window.scrollY > 300){
+
+    scrollTopBtn.classList.add("show");
+
+  } else {
+
+    scrollTopBtn.classList.remove("show");
+
+  }
+
+});
+
+/* SCROLL TO TOP */
+scrollTopBtn.addEventListener("click", () => {
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+});
+
 </script>
 </body>
 </html>
