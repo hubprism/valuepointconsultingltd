@@ -831,64 +831,34 @@
   backdrop-filter:blur(10px);
 }
 
-/* WHY CHOOSE US ACCORDION */
+/* WHY CHOOSE US STATIC */
 .why-card{
   width:100%;
 }
 
-.accordion{
+.why-list{
   margin-top:20px;
+  display:grid;
+  gap:16px;
 }
 
-.accordion-item{
+.why-item{
   border:1px solid rgba(255,255,255,.08);
   border-radius:14px;
-  overflow:hidden;
-  margin-bottom:14px;
+  padding:20px 24px;
   background:rgba(255,255,255,.04);
 }
 
-.accordion-header{
-  width:100%;
-  background:none;
-  border:none;
+.why-item h4{
   color:#fff;
-  padding:20px 24px;
   font-size:17px;
-  font-weight:700;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  cursor:pointer;
-  text-align:left;
+  margin-bottom:10px;
 }
 
-.accordion-header span{
-  font-size:24px;
-  color:#d4af37;
-  transition:.3s;
-}
-
-.accordion-content{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .4s ease;
-  padding:0 24px;
-}
-
-.accordion-content p{
+.why-item p{
   color:#d6dfeb;
-  padding-bottom:22px;
   line-height:1.8;
   font-size:15px;
-}
-
-.accordion-item.active .accordion-content{
-  max-height:220px;
-}
-
-.accordion-item.active .accordion-header span{
-  transform:rotate(45deg);
 }
 
 /* MOBILE */
@@ -1318,82 +1288,49 @@ style="background-image:url('images/img5.jpg')">
 
   <h3>Why Choose Us</h3>
 
-  <div class="accordion">
+  <div class="why-list">
 
-    <!-- ITEM 1 -->
-    <div class="accordion-item active">
-      <button class="accordion-header">
-        Bespoke Solutions
-        <span>+</span>
-      </button>
+  <div class="why-item">
+    <h4>Bespoke Solutions</h4>
+    <p>
+      Every engagement is tailored to the unique context,
+      culture, and strategic ambitions of the client.
+    </p>
+  </div>
 
-      <div class="accordion-content">
-        <p>
-          Every engagement is tailored to the unique context,
-          culture, and strategic ambitions of the client.
-        </p>
-      </div>
-    </div>
+  <div class="why-item">
+    <h4>Sector Expertise</h4>
+    <p>
+      Deep domain knowledge in high-growth Nigerian industries
+      ensures our recommendations are commercially grounded.
+    </p>
+  </div>
 
-    <!-- ITEM 2 -->
-    <div class="accordion-item">
-      <button class="accordion-header">
-        Sector Expertise
-        <span>+</span>
-      </button>
+  <div class="why-item">
+    <h4>Results Orientation</h4>
+    <p>
+      We define success by measurable outcomes,
+      not deliverable volume.
+    </p>
+  </div>
 
-      <div class="accordion-content">
-        <p>
-          Deep domain knowledge in high-growth Nigerian industries
-          ensures our recommendations are commercially grounded.
-        </p>
-      </div>
-    </div>
+  <div class="why-item">
+    <h4>Senior-Level Attention</h4>
+    <p>
+      Our clients receive direct access to experienced consultants
+      throughout the engagement.
+    </p>
+  </div>
 
-    <!-- ITEM 3 -->
-    <div class="accordion-item">
-      <button class="accordion-header">
-        Results Orientation
-        <span>+</span>
-      </button>
+  <div class="why-item">
+    <h4>End-to-End Capability</h4>
+    <p>
+      From strategy to implementation,
+      we are with you every step of the way.
+    </p>
+  </div>
 
-      <div class="accordion-content">
-        <p>
-          We define success by measurable outcomes,
-          not deliverable volume.
-        </p>
-      </div>
-    </div>
-
-    <!-- ITEM 4 -->
-    <div class="accordion-item">
-      <button class="accordion-header">
-        Senior-Level Attention
-        <span>+</span>
-      </button>
-
-      <div class="accordion-content">
-        <p>
-          Our clients receive direct access to experienced consultants
-          throughout the engagement.
-        </p>
-      </div>
-    </div>
-
-    <!-- ITEM 5 -->
-    <div class="accordion-item">
-      <button class="accordion-header">
-        End-to-End Capability
-        <span>+</span>
-      </button>
-
-      <div class="accordion-content">
-        <p>
-          From strategy to implementation,
-          we are with you every step of the way.
-        </p>
-      </div>
-    </div>
+</div>
       
   </div>
 
@@ -1816,31 +1753,6 @@ setInterval(nextSlide, 5000);
     navLinks.classList.toggle("active");
   });
 </script>
-
-<script>
-  const accordionItems = document.querySelectorAll(".accordion-item");
-
-  accordionItems.forEach(item => {
-
-    const header = item.querySelector(".accordion-header");
-
-    header.addEventListener("click", () => {
-
-      accordionItems.forEach(otherItem => {
-
-        if(otherItem !== item){
-          otherItem.classList.remove("active");
-        }
-
-      });
-
-      item.classList.toggle("active");
-
-    });
-
-  });
-</script>
-
 
 <script>
   const readMoreButtons = document.querySelectorAll(".read-more-btn");
