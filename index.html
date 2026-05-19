@@ -741,6 +741,108 @@ nav{
   background:#f8fafc;
 }
 
+/* CONSULTING APPROACH */
+.consulting-approach{
+  background:#ffffff;
+}
+
+.approach-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  margin-top:20px;
+}
+
+.approach-card{
+  padding:40px 28px;
+  min-height:340px;
+  position:relative;
+  border:1px solid #b7bec9;
+  transition:.3s ease;
+}
+
+.approach-card:hover{
+  transform:translateY(-6px);
+}
+
+.approach-card.dark{
+  background:#17386f;
+  color:#fff;
+}
+
+.approach-card.light{
+  background:#d9dee7;
+  color:#17386f;
+}
+
+.approach-number{
+  font-size:54px;
+  font-weight:800;
+  margin-bottom:18px;
+  line-height:1;
+}
+
+.approach-card.dark .approach-number{
+  color:#d4af37;
+}
+
+.approach-card.light .approach-number{
+  color:#17386f;
+}
+
+.approach-card h3{
+  font-size:24px;
+  font-weight:800;
+  margin-bottom:16px;
+  letter-spacing:.5px;
+}
+
+.approach-line{
+  width:90px;
+  height:5px;
+  background:#d4af37;
+  margin-bottom:24px;
+}
+
+.approach-card p{
+  font-size:15px;
+  line-height:1.9;
+}
+
+.approach-card.dark p{
+  color:#eef3ff;
+}
+
+.approach-card.light p{
+  color:#243b63;
+}
+
+/* TABLET */
+@media(max-width:1000px){
+
+  .approach-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  .approach-grid{
+    grid-template-columns:1fr;
+  }
+
+  .approach-card{
+    min-height:auto;
+  }
+
+  .approach-number{
+    font-size:42px;
+  }
+
+}
+
 /* CTA */
 .cta{
   background:#061a3a;
@@ -1648,16 +1750,86 @@ style="background-image:url('images/img5.jpg')">
   </div>
 </section>
 
-<section class="process fade-in fade-delay-7">
+<section class="consulting-approach fade-in fade-delay-7">
+
   <div class="container">
-    <p class="eyebrow" style="text-align:center">Our Consulting Approach</p>
-    <h2 class="title">A Proven Approach to HR Excellence</h2><div class="line"></div>
-    <div class="grid-3">
-      <div class="card"><h3>01. Understand</h3><p>We analyze your business needs.</p></div>
-      <div class="card"><h3>02. Strategize</h3><p>We design customized HR solutions.</p></div>
-      <div class="card"><h3>03. Implement</h3><p>We execute with precision.</p></div>
+
+    <p class="eyebrow" style="text-align:center">
+      Our Consulting Approach
+    </p>
+
+    <h2 class="title">
+      A Proven Approach to HR Excellence
+    </h2>
+
+    <div class="line"></div>
+
+    <div class="approach-grid">
+
+      <!-- ITEM 1 -->
+      <div class="approach-card dark">
+
+        <div class="approach-number">01</div>
+
+        <h3>DIAGNOSE</h3>
+
+        <div class="approach-line"></div>
+
+        <p>
+          We begin with a thorough assessment of your current people and organisational challenges through interviews, surveys, and data review.
+        </p>
+
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="approach-card light">
+
+        <div class="approach-number">02</div>
+
+        <h3>DESIGN</h3>
+
+        <div class="approach-line"></div>
+
+        <p>
+          We co-create bespoke solutions tailored to your context, size, culture, and strategic goals — no off-the-shelf templates.
+        </p>
+
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="approach-card dark">
+
+        <div class="approach-number">03</div>
+
+        <h3>DELIVER</h3>
+
+        <div class="approach-line"></div>
+
+        <p>
+          We implement with your team, providing tools, training, and hands-on support to ensure solutions are embedded effectively.
+        </p>
+
+      </div>
+
+      <!-- ITEM 4 -->
+      <div class="approach-card light">
+
+        <div class="approach-number">04</div>
+
+        <h3>SUSTAIN</h3>
+
+        <div class="approach-line"></div>
+
+        <p>
+          We build your internal capability, measure outcomes, and provide follow-up support to lock in lasting change.
+        </p>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- OUR TEAM MEMBERS -->
