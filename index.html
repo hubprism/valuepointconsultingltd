@@ -1306,109 +1306,6 @@ footer li{
 
 }
 
-/* ABOUT - MODERN CONSULTING LAYOUT */
-
-.about-intro{
-  text-align:center;
-  max-width:850px;
-  margin:0 auto 60px;
-}
-
-.about-lead{
-  font-size:18px;
-  color:#d6dfeb;
-  line-height:1.9;
-  margin-top:18px;
-}
-
-/* PILLARS */
-.pillar-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-bottom:80px;
-}
-
-.pillar-card{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.1);
-  padding:30px;
-  border-radius:18px;
-  text-align:left;
-  backdrop-filter:blur(10px);
-}
-
-/* STORY BLOCK */
-.story-block{
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:60px;
-  align-items:center;
-  margin-bottom:80px;
-}
-
-.story-text h3{
-  font-size:32px;
-  margin-bottom:18px;
-  color:#fff;
-}
-
-.story-text p{
-  color:#d6dfeb;
-  line-height:1.9;
-  margin-bottom:16px;
-}
-
-.story-image img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  border-radius:20px;
-}
-
-/* WHY SECTION */
-.why-section{
-  text-align:center;
-}
-
-.why-header h3{
-  font-size:34px;
-  margin-bottom:8px;
-}
-
-.why-header p{
-  color:#d6dfeb;
-  margin-bottom:40px;
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.why-card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  padding:24px;
-  border-radius:16px;
-  text-align:left;
-}
-
-/* RESPONSIVE */
-@media(max-width:1000px){
-
-  .pillar-grid,
-  .why-grid{
-    grid-template-columns:1fr;
-  }
-
-  .story-block{
-    grid-template-columns:1fr;
-  }
-
-}
-
 </style>
 </head>
 <body>
@@ -1674,124 +1571,185 @@ style="background-image:url('images/img5.jpg')">
   </div>
 </section>
 
-<section class="about-section" id="about">
+<!-- ABOUT US -->
+<section class="about-section fade-in fade-delay-5" id="about">
 
   <div class="container">
 
-    <!-- INTRO HEADER -->
-    <div class="about-intro">
+    <div class="about-grid">
 
-      <p class="eyebrow">WHO WE ARE</p>
+      <!-- TEXT CONTENT -->
+      <div class="about-content">
 
-      <h2 class="about-heading">
-        A Trusted <span>HR & Management</span> Consulting Partner
-      </h2>
+        <p class="eyebrow">WHO WE ARE</p>
 
-      <p class="about-lead">
-        ValuePoint Consulting Limited helps organisations design people systems,
-        improve performance, and build scalable structures that drive sustainable growth.
-      </p>
+        <h2 class="about-heading">
+          Your Trusted <span>HR & Management</span> Consulting Partner
+        </h2>
+
+        <p class="about-text">
+          ValuePoint Consulting Limited is a specialist Human Resources and Management Consulting firm that 
+          exists to help ambitious startups, SMEs and growing business organisations to unlock the full potential 
+          of their most critical asset i.e. their people, thereby driving measurable business value.
+        </p>
+
+        <p class="about-text">
+         We partner with businesses across diverse sectors to build high-performing, 
+         people-centred organisations and also give management advice. Our approach is
+          grounded in rigorous diagnostics, practical expertise, and a relentless commitment 
+          to delivering measurable results.
+        </p>
+
+        <p class="about-text">
+          ValuePoint Consulting Limited is not just a consulting firm alone, but your strategic growth partner. 
+          We combine the agility of a boutique practice with the rigour of a world-class consulting methodology, 
+          offering our clients the best of both worlds.
+          </p>
+
+      </div>
+
+      <!-- IMAGE -->
+      <div class="about-image">
+
+        <img 
+          src="images/about.png" 
+          alt="African business professionals meeting"
+        >
+
+      </div>
 
     </div>
 
-    <!-- CORE PILLARS -->
-    <div class="pillar-grid">
+    <!-- CARDS -->
+    <div class="about-card-wrap">
 
-      <div class="pillar-card">
-        <div class="about-icon"><i class="fa-solid fa-bullseye"></i></div>
-        <h3>Mission</h3>
-        <p>Empowering businesses with world-class HR solutions that unlock human potential and operational excellence.</p>
-      </div>
+      <!-- MISSION -->
+<div class="about-card">
 
-      <div class="pillar-card">
-        <div class="about-icon"><i class="fa-solid fa-eye"></i></div>
-        <h3>Vision</h3>
-        <p>To be the most trusted HR consulting partner for growing businesses across Africa.</p>
-      </div>
+  <div class="about-icon">
+    <i class="fa-solid fa-bullseye"></i>
+  </div>
 
-      <div class="pillar-card">
-        <div class="about-icon"><i class="fa-solid fa-gem"></i></div>
-        <h3>Values</h3>
-        <p>Integrity, Excellence, Client-Centricity, Innovation, Collaboration, Impact.</p>
-      </div>
+  <h3>Our Mission</h3>
 
-    </div>
+  <p>
+    To empower Nigerian startups, SMEs with world-class HR and Management consulting solutions so as 
+    to unlock people potential, drive operational excellence and create lasting organizational value.
+  </p>
 
-    <!-- COMPANY STORY -->
-    <div class="story-block">
+</div>
 
-      <div class="story-text">
+<!-- VISION -->
+<div class="about-card">
+
+  <div class="about-icon">
+    <i class="fa-solid fa-eye"></i>
+  </div>
+
+  <h3>Our Vision</h3>
+
+  <p>
+    To be the most trusted HR and management consulting partner for growing businesses across Nigeria,
+    recognized for delivering practical, impactful and context-driven solutions.
+  </p>
+
+</div>
+
+<!-- CORE VALUES -->
+<div class="about-card">
+
+  <div class="about-icon">
+    <i class="fa-solid fa-gem"></i>
+  </div>
+
+  <h3>Core Values</h3>
+
+  <ul>
+    <li>Professionalism</li>
+    <li>Excellence</li>
+    <li>Client-Centricity</li>
+    <li>Integrity</li>
+    <li>Innovation</li>
+    <li>Collaboration</li>
+    <li>Impact</li>
+  </ul>
+
+</div>
+
+      <!-- OUR COMPANY STORY -->
+<div class="about-card company-story">
         <h3>Our Company Story</h3>
 
         <p>
-          ValuePoint Consulting Limited was founded to solve a critical gap in organisations:
-          the lack of structured people systems that support growth and performance.
-        </p>
-
-        <p>
-          We work with startups, SMEs, and established organisations to design HR frameworks,
-          improve workforce efficiency, and implement practical systems that deliver measurable outcomes.
-        </p>
-
-        <p>
-          Our approach combines deep consulting expertise with hands-on execution support,
-          ensuring strategies are not only designed—but implemented effectively.
+          ValuePoint Consulting Limited was founded to help businesses build structure, 
+          improve workforce performance, and implement practical systems that support sustainable growth.</p>
+          <p>We recognized that many organizations struggle not because of lack of potential, 
+            but because of unclear processes, weak performance systems, and limited operational structure. 
+            Our mission is to help businesses overcome these challenges through practical HR and 
+            business consulting solutions that deliver measurable results.
         </p>
       </div>
-
-      <div class="story-image">
-        <img src="images/about.png" alt="Consulting Team">
-      </div>
-
-    </div>
-
-    <!-- WHY CHOOSE US -->
-    <div class="why-section">
-
-      <div class="why-header">
-        <h3>Why Organisations Choose Us</h3>
-        <p>We focus on outcomes, not activity.</p>
-      </div>
-
-      <div class="why-grid">
-
-        <div class="why-card">
-          <h4>Bespoke Solutions</h4>
-          <p>Tailored strategies aligned to your business context and goals.</p>
-        </div>
-
-        <div class="why-card">
-          <h4>Sector Expertise</h4>
-          <p>Deep experience across high-growth Nigerian industries.</p>
-        </div>
-
-        <div class="why-card">
-          <h4>Results Driven</h4>
-          <p>We measure success by tangible business impact.</p>
-        </div>
-
-        <div class="why-card">
-          <h4>Senior Attention</h4>
-          <p>Direct access to experienced consultants at every stage.</p>
-        </div>
-
-        <div class="why-card">
-          <h4>End-to-End Delivery</h4>
-          <p>From strategy design to implementation and tracking.</p>
-        </div>
-
-        <div class="why-card">
-          <h4>Practical Approach</h4>
-          <p>No theory-heavy consulting—only actionable solutions.</p>
-        </div>
-
-      </div>
-
+</div>
     </div>
 
   </div>
+      
+      <!-- WHY CHOOSE US -->
+<div class="about-card why-card">
 
-</section>
+  <h3>Why Choose Us</h3>
+
+  <div class="why-list">
+
+  <div class="why-item">
+    <h4>Bespoke Solutions</h4>
+    <p>
+      Every engagement is tailored to the unique context,
+      culture, and strategic ambitions of the client.
+    </p>
+  </div>
+
+  <div class="why-item">
+    <h4>Sector Expertise</h4>
+    <p>
+      Deep domain knowledge in high-growth Nigerian industries
+      ensures our recommendations are commercially grounded.
+    </p>
+  </div>
+
+  <div class="why-item">
+    <h4>Results Orientation</h4>
+    <p>
+      We define success by measurable outcomes,
+      not deliverable volume.
+    </p>
+  </div>
+
+  <div class="why-item">
+    <h4>Senior-Level Attention</h4>
+    <p>
+      Our clients receive direct access to experienced consultants
+      throughout the engagement.
+    </p>
+  </div>
+
+  <div class="why-item">
+    <h4>End-to-End Capability</h4>
+    <p>
+      From strategy to implementation,
+      we are with you every step of the way.
+    </p>
+  </div>
+
+</div>
+      
+  </div>
+
+  
+
+        </div>
+</div>
+
 
 
 </section>
