@@ -594,31 +594,7 @@ nav{
 
 }
 
-/* WHY CHOOSE US */
-.why-list{
-  margin-top:20px;
-  display:grid;
-  gap:16px;
-}
 
-.why-item{
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:20px;
-  padding:20px 24px;
-  background:rgba(255,255,255,.04);
-}
-
-.why-item h4{
-  color:#fff;
-  font-size:17px;
-  margin-bottom:10px;
-}
-
-.why-item p{
-  color:#d6dfeb;
-  line-height:1.8;
-  font-size:15px;
-}
 
 /* IMPACT */
 .impact{
@@ -864,6 +840,42 @@ nav{
 
   .approach-number{
     font-size:42px;
+  }
+
+}
+
+/* WHY CHOOSE US SECTION */
+.why-choose-section{
+  background:#f8fafc;
+}
+
+.why-choose-section .approach-grid{
+  grid-template-columns:repeat(5,1fr);
+}
+
+/* LARGE TABLET */
+@media(max-width:1200px){
+
+  .why-choose-section .approach-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+/* TABLET */
+@media(max-width:900px){
+
+  .why-choose-section .approach-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  .why-choose-section .approach-grid{
+    grid-template-columns:1fr;
   }
 
 }
@@ -1704,54 +1716,100 @@ style="background-image:url('images/img5.jpg')">
         </p>
             </div>
 
-      <!-- WHY CHOOSE US -->
-      <div class="about-card why-card">
+     <!-- WHY CHOOSE US -->
+<section class="consulting-approach why-choose-section fade-in">
 
-        <h3>Why Choose Us</h3>
+  <div class="container">
 
-        <div class="why-list">
+    <p class="eyebrow" style="text-align:center">
+      Why Choose Us
+    </p>
 
-          <div class="why-item">
-            <h4>Bespoke Solutions</h4>
-            <p>
-              Every engagement is tailored to the unique context,
-              culture, and strategic ambitions of the client.
-            </p>
-          </div>
+    <h2 class="title">
+      Why Businesses Trust ValuePoint
+    </h2>
 
-          <div class="why-item">
-            <h4>Sector Expertise</h4>
-            <p>
-              Deep domain knowledge in high-growth Nigerian industries
-              ensures our recommendations are commercially grounded.
-            </p>
-          </div>
+    <div class="line"></div>
 
-          <div class="why-item">
-            <h4>Results Orientation</h4>
-            <p>
-              We define success by measurable outcomes,
-              not deliverable volume.
-            </p>
-          </div>
+    <div class="approach-grid">
 
-          <div class="why-item">
-            <h4>Senior-Level Attention</h4>
-            <p>
-              Our clients receive direct access to experienced consultants
-              throughout the engagement.
-            </p>
-          </div>
+      <!-- ITEM 1 -->
+      <div class="approach-card dark">
 
-          <div class="why-item">
-            <h4>End-to-End Capability</h4>
-            <p>
-              From strategy to implementation,
-              we are with you every step of the way.
-            </p>
-          </div>
+        <div class="approach-number">01</div>
 
-        </div>
+        <h3>BESPOKE SOLUTIONS</h3>
+
+        <div class="approach-line"></div>
+
+        <p>
+          Every engagement is tailored to the unique context,
+          culture, and strategic ambitions of the client.
+        </p>
+
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="approach-card light">
+
+        <div class="approach-number">02</div>
+
+        <h3>SECTOR EXPERTISE</h3>
+
+        <div class="approach-line"></div>
+
+        <p>
+          Deep domain knowledge in high-growth Nigerian industries
+          ensures our recommendations are commercially grounded.
+        </p>
+
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="approach-card dark">
+
+        <div class="approach-number">03</div>
+
+        <h3>RESULTS ORIENTATION</h3>
+
+        <div class="approach-line"></div>
+
+        <p>
+          We define success by measurable outcomes,
+          not deliverable volume.
+        </p>
+
+      </div>
+
+      <!-- ITEM 4 -->
+      <div class="approach-card light">
+
+        <div class="approach-number">04</div>
+
+        <h3>SENIOR-LEVEL ATTENTION</h3>
+
+        <div class="approach-line"></div>
+
+        <p>
+          Our clients receive direct access to experienced consultants
+          throughout the engagement.
+        </p>
+
+      </div>
+
+      <!-- ITEM 5 -->
+      <div class="approach-card dark">
+
+        <div class="approach-number">05</div>
+
+        <h3>END-TO-END CAPABILITY</h3>
+
+        <div class="approach-line"></div>
+
+        <p>
+          From strategy to implementation,
+          we are with you every step of the way.
+        </p>
 
       </div>
 
