@@ -178,10 +178,11 @@
     .btn{display:inline-block;padding:14px 24px;border-radius:6px;font-weight:700}
     .btn-orange{background:#d4af37;color:white}
     .btn-dark{background:#061a3a;color:white}
-    
-    
+    header{position:sticky;top:0;background:white;z-index:10;border-bottom:1px solid #eee}
+    nav{height:75px;display:flex;align-items:center;justify-content:space-between}
     .logo{font-size:26px;font-weight:900;color:#061a3a}
     .logo span{color:#d4af37}
+    .links{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:700}
     .hero{background:linear-gradient(135deg,#031226,#061a3a 60%,#08244d);color:white;padding:90px 0}
     .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
    .eyebrow{
@@ -977,84 +978,36 @@
 </head>
 <body>
 <!-- HEADER -->
-<header class="main-header">
+<header class="fade-in fade-delay-1">
+  <nav class="container">
 
-  <!-- TOP CONTACT BAR -->
-  <div class="top-bar">
-    <div class="container top-bar-content">
+    <a href="index.html" class="navbar-brand">
+      <img src="images/logo.png" alt="ValuePoint Logo" class="logo-img">
+    </a>
 
-      <!-- LOGO -->
-      <a href="index.html" class="navbar-brand">
-        <img src="images/logo.png" alt="ValuePoint Logo" class="logo-img">
-      </a>
-
-      <!-- CONTACT ITEMS -->
-      <div class="top-contact-wrap">
-
-        <div class="top-contact">
-          <i class="fa-solid fa-phone"></i>
-
-          <div>
-            <h4>Call Us</h4>
-            <p>+234 803 804 9466</p>
-          </div>
-        </div>
-
-        <div class="top-contact">
-          <i class="fa-solid fa-envelope"></i>
-
-          <div>
-            <h4>Email Us</h4>
-            <p>info@valuepointconsultingltd.com</p>
-          </div>
-        </div>
-
-        <div class="top-contact">
-          <i class="fa-solid fa-location-dot"></i>
-
-          <div>
-            <h4>Office Address</h4>
-            <p>1st Floor, 30 King George V Road, Onikan, Lagos</p>
-          </div>
-        </div>
-
-      </div>
+    <!-- Mobile Menu Button -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
     </div>
-  </div>
 
-  <!-- NAVBAR -->
-  <div class="navbar-area">
+    <!-- NAV LINKS -->
+    <div class="links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#careers">Careers</a>
+      <a href="#team">Our Team</a>
+      <a href="#contact">Contact</a>
 
-    <nav class="container navbar">
-
-      <!-- MOBILE MENU BUTTON -->
-      <div class="menu-toggle" id="menuToggle">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-
-      <!-- NAV LINKS -->
-      <div class="links" id="navLinks">
-
-        <a href="#">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#industries">Industries</a>
-        <a href="#careers">Careers</a>
-        <a href="#team">Our Team</a>
-        <a href="#contact">Contact</a>
-
-      </div>
-
-      <!-- BUTTON -->
-      <a class="btn nav-btn" href="#contact">
+      <a class="btn btn-dark" href="#contact">
         Book Consultation
       </a>
+    </div>
 
-    </nav>
-
-  </div>
-
+  </nav>
 </header>
+
 
 <!-- HERO SECTION -->
 <section class="hero fade-in fade-delay-2">
