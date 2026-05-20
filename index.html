@@ -644,6 +644,14 @@ nav{
     padding:50px 20px;
   }
 
+  .about-section{
+  overflow:hidden;
+}
+
+.about-grid{
+  width:100%;
+}
+
   .why-choose-section .approach-grid{
     grid-template-columns:1fr;
   }
@@ -1340,11 +1348,17 @@ footer li{
 @media(max-width:600px){
 
   .hero-text{
+  position:absolute;
+  opacity:0;
+  visibility:hidden;
+  transform:none;
+  width:100%;
+}
+
+.hero-text.active{
   position:relative;
   opacity:1;
   visibility:visible;
-  transform:none;
-  width:100%;
 }
 
 .hero-grid{
