@@ -901,16 +901,16 @@ nav{
 .why-choose-section{
   background:#f8fafc;
   width:100%;
-  max-width:1400px;
-  margin:60px auto 0;
-  padding:90px 60px;
-  border-radius:32px;
+  margin-top:60px;
+  padding:90px 0;
 }
 
-/* MAKE INNER CONTENT FULL WIDTH */
-.why-choose-section .container{
+/* FULL WIDTH INNER AREA */
+.why-choose-section .why-wrapper{
   width:100%;
-  max-width:1280px;
+  max-width:1400px;
+  margin:auto;
+  padding:0 40px;
 }
 
 /* GRID */
@@ -921,29 +921,16 @@ nav{
   width:100%;
 }
 
-/* LAST 2 CARDS */
-.why-choose-section .approach-card:nth-child(4){
-  grid-column:1 / 2;
+/* CARD HEIGHT */
+.why-choose-section .approach-card{
+  min-height:100%;
 }
 
-.why-choose-section .approach-card:nth-child(5){
-  grid-column:2 / 3;
-}
-
-/* LAPTOP */
-@media(max-width:1100px){
-
-  .why-choose-section{
-    padding:70px 30px;
-  }
+/* TABLET */
+@media(max-width:1000px){
 
   .why-choose-section .approach-grid{
     grid-template-columns:repeat(2,1fr);
-  }
-
-  .why-choose-section .approach-card:nth-child(4),
-  .why-choose-section .approach-card:nth-child(5){
-    grid-column:auto;
   }
 
 }
@@ -952,7 +939,11 @@ nav{
 @media(max-width:600px){
 
   .why-choose-section{
-    padding:50px 20px;
+    padding:60px 0;
+  }
+
+  .why-choose-section .why-wrapper{
+    padding:0 20px;
   }
 
   .why-choose-section .approach-grid{
@@ -960,6 +951,7 @@ nav{
   }
 
 }
+
 /* CTA */
 .cta{
   background:#061a3a;
@@ -1819,7 +1811,7 @@ style="background-image:url('images/img5.jpg')">
 <!-- WHY CHOOSE US -->
 <section class="consulting-approach why-choose-section fade-in">
 
-  <div class="container">
+  <div class="why-wrapper">
 
     <p class="eyebrow" style="text-align:center">
       Why Choose Us
