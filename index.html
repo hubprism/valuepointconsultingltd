@@ -569,27 +569,84 @@ nav{
 
 
 
-.company-story{
-  min-height: 100%;
+/* COMPANY STORY SECTION */
+.company-story-section{
+  width:100%;
+  margin-top:60px;
+  background:#0b2347;
+  border-radius:30px;
+  padding:80px 70px;
 }
 
-.why-card{
-  min-height: 100%;
+.company-story-content{
+  max-width:1000px;
+  margin:auto;
 }
-.company-story,
-.why-card{
-  padding:40px;
-  border-radius:28px;
+
+.company-story-section .story-title{
+  color:#fff;
 }
+
+.company-story-section p{
+  color:#d6dfeb;
+  font-size:18px;
+  line-height:1.9;
+  margin-bottom:24px;
+}
+
+/* WHY CHOOSE US */
+.why-choose-section{
+  background:#f8fafc;
+  width:100%;
+  margin-top:60px;
+  padding:90px 60px;
+  border-radius:30px;
+}
+
+/* DESKTOP */
+.why-choose-section .approach-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+/* TABLET */
 @media(max-width:1000px){
 
-  .company-story,
-  .why-card{
-    grid-column:span 1;
+  .company-story-section{
+    padding:60px 35px;
+  }
+
+  .why-choose-section{
+    padding:70px 30px;
+  }
+
+  .why-choose-section .approach-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
 }
 
+/* MOBILE */
+@media(max-width:600px){
+
+  .company-story-section{
+    padding:45px 22px;
+  }
+
+  .company-story-section p{
+    font-size:16px;
+  }
+
+  .why-choose-section{
+    padding:50px 20px;
+  }
+
+  .why-choose-section .approach-grid{
+    grid-template-columns:1fr;
+  }
+
+}
 
 
 /* IMPACT */
@@ -1726,20 +1783,40 @@ style="background-image:url('images/img5.jpg')">
 </div>
 
       <!-- OUR COMPANY STORY -->
-<div class="about-card company-story">
-        <h3>Our Company Story</h3>
+<div class="company-story-section">
 
-        <p>
-          ValuePoint Consulting Limited was founded to help businesses build structure, 
-          improve workforce performance, and implement practical systems that support sustainable growth.</p>
-          <p>We recognized that many organizations struggle not because of lack of potential, 
-            but because of unclear processes, weak performance systems, and limited operational structure. 
-            Our mission is to help businesses overcome these challenges through practical HR and 
-            business consulting solutions that deliver measurable results.
-        </p>
-            </div>
+  <div class="company-story-content">
 
-     <!-- WHY CHOOSE US -->
+    <p class="eyebrow">
+      Our Story
+    </p>
+
+    <h2 class="title story-title">
+      Our Company Story
+    </h2>
+
+    <div class="line"></div>
+
+    <p>
+      ValuePoint Consulting Limited was founded to help businesses build structure,
+      improve workforce performance, and implement practical systems that support sustainable growth.
+    </p>
+
+    <p>
+      We recognized that many organizations struggle not because of lack of potential,
+      but because of unclear processes, weak performance systems, and limited operational structure.
+    </p>
+
+    <p>
+      Our mission is to help businesses overcome these challenges through practical HR
+      and business consulting solutions that deliver measurable results.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- WHY CHOOSE US -->
 <section class="consulting-approach why-choose-section fade-in">
 
   <div class="container">
