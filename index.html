@@ -567,11 +567,7 @@ nav{
   color:#d4af37;
 }
 
-.company-story,
-.why-card{
-  grid-column: 1 / -1;
-  width: 100%;
-}
+
 
 .company-story{
   min-height: 100%;
@@ -847,22 +843,42 @@ nav{
 /* WHY CHOOSE US SECTION */
 .why-choose-section{
   background:#f8fafc;
+  width:100%;
+  max-width:1400px;
+  margin:60px auto 0;
+  padding:90px 60px;
+  border-radius:32px;
 }
 
+/* MAKE INNER CONTENT FULL WIDTH */
+.why-choose-section .container{
+  width:100%;
+  max-width:1280px;
+}
+
+/* GRID */
 .why-choose-section .approach-grid{
+  display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:24px;
+  width:100%;
 }
-/* LAST 2 CARDS CENTERED */
+
+/* LAST 2 CARDS */
 .why-choose-section .approach-card:nth-child(4){
-  grid-column:2 / 3;
+  grid-column:1 / 2;
 }
 
 .why-choose-section .approach-card:nth-child(5){
-  grid-column:3 / 4;
+  grid-column:2 / 3;
 }
+
 /* LAPTOP */
 @media(max-width:1100px){
+
+  .why-choose-section{
+    padding:70px 30px;
+  }
 
   .why-choose-section .approach-grid{
     grid-template-columns:repeat(2,1fr);
@@ -878,12 +894,15 @@ nav{
 /* MOBILE */
 @media(max-width:600px){
 
+  .why-choose-section{
+    padding:50px 20px;
+  }
+
   .why-choose-section .approach-grid{
     grid-template-columns:1fr;
   }
 
 }
-
 /* CTA */
 .cta{
   background:#061a3a;
