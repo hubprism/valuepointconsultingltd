@@ -567,24 +567,6 @@ nav{
   color:#d4af37;
 }
 
-.company-story,
-.why-card{
-  grid-column: 1 / -1;
-  width: 100%;
-}
-
-.company-story{
-  min-height: 100%;
-}
-
-.why-card{
-  min-height: 100%;
-}
-.company-story,
-.why-card{
-  padding:40px;
-  border-radius:28px;
-}
 @media(max-width:1000px){
 
   .company-story,
@@ -847,22 +829,44 @@ nav{
 /* WHY CHOOSE US SECTION */
 .why-choose-section{
   background:#f8fafc;
+  padding:90px 0;
 }
 
-.why-choose-section .approach-grid{
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+/* EXPAND WIDTH ON DESKTOP */
+.why-choose-section .container{
+  width:min(1400px,95%);
 }
-/* LAST 2 CARDS CENTERED */
+
+/* BIGGER GRID */
+.why-choose-section .approach-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  margin-top:40px;
+}
+
+/* LARGER CARDS */
+.why-choose-section .approach-card{
+  min-height:380px;
+  padding:48px 36px;
+  border-radius:28px;
+}
+
+/* CENTER LAST 2 CARDS */
 .why-choose-section .approach-card:nth-child(4){
-  grid-column:2 / 3;
+  grid-column:1 / 2;
 }
 
 .why-choose-section .approach-card:nth-child(5){
-  grid-column:3 / 4;
+  grid-column:2 / 3;
 }
-/* LAPTOP */
+
+/* TABLET */
 @media(max-width:1100px){
+
+  .why-choose-section .container{
+    width:min(1180px,92%);
+  }
 
   .why-choose-section .approach-grid{
     grid-template-columns:repeat(2,1fr);
@@ -882,8 +886,12 @@ nav{
     grid-template-columns:1fr;
   }
 
-}
+  .why-choose-section .approach-card{
+    min-height:auto;
+    padding:35px 24px;
+  }
 
+}
 /* CTA */
 .cta{
   background:#061a3a;
@@ -2366,4 +2374,5 @@ scrollTopBtn.addEventListener("click", () => {
 </script>
 </body>
 </html>
+
 
