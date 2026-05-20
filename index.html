@@ -1348,7 +1348,7 @@ footer li{
 @media(max-width:600px){
 
   .hero-text{
-  position:absolute;
+  position:relative;
   opacity:0;
   visibility:hidden;
   transform:none;
@@ -2462,6 +2462,21 @@ scrollTopBtn.addEventListener("click", () => {
   });
 
 });
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+</script>
 
 </script>
 </body>
