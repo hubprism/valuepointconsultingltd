@@ -248,9 +248,10 @@ nav{
 
 .hero-text{
   position:absolute;
+  top:50%;
+  transform:translateY(-50%);
   width:min(700px,100%);
   opacity:0;
-  transform:translateY(40px);
   visibility:hidden;
   transition:
     opacity .9s ease,
@@ -259,7 +260,7 @@ nav{
 
 .hero-text.active{
   opacity:1;
-  transform:translateY(0);
+  transform:translateY(-50%);
   visibility:visible;
 }
 
@@ -1332,6 +1333,27 @@ footer li{
 
 /* MOBILE */
 @media(max-width:600px){
+
+  .hero-text{
+  position:relative;
+  opacity:1;
+  visibility:visible;
+  transform:none;
+  width:100%;
+}
+
+.hero-grid{
+  min-height:auto;
+}
+
+.hero-content{
+  position:relative;
+  z-index:3;
+}
+
+.hero{
+  height:auto;
+}
 
   section{
     padding:70px 0;
