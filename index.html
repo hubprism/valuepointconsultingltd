@@ -1196,9 +1196,14 @@ footer li{
 
 /* FADE ANIMATION */
 .fade-in{
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .9s ease, transform .9s ease;
+}
+
+.fade-in.animate{
   opacity:0;
   transform:translateY(45px);
-  transition:opacity .9s ease, transform .9s ease;
 }
 
 .fade-in.show{
@@ -2340,19 +2345,23 @@ Onikan, Lagos Island, Lagos, Nigeria</p><p>info@valuepointconsultingltd.com</p><
 <script>
   const fadeElements = document.querySelectorAll(".fade-in");
 
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add("show");
-      }
-    });
-  }, {
-    threshold: 0.15
-  });
+fadeElements.forEach(element => {
+  element.classList.add("animate");
+});
 
-  fadeElements.forEach(element => {
-    fadeObserver.observe(element);
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
   });
+}, {
+  threshold: 0.15
+});
+
+fadeElements.forEach(element => {
+  fadeObserver.observe(element);
+});
 </script>
 
 
