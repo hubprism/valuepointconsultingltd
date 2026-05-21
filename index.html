@@ -2238,9 +2238,32 @@ Power BI deployments, and custom payroll/vendor systems.
 <section class="cta fade-in fade-delay-5" id="contact">
   <div class="container cta-grid">
     <div><p class="eyebrow">Book a Consultation</p><h2>Let’s Talk About Your HR Needs</h2><p>Schedule a free consultation with our HR experts today.</p></div>
-    <form><input placeholder="Full Name"><input placeholder="Email Address"><input placeholder="Phone Number"><input placeholder="Company Name"><textarea placeholder="How can we help you?"></textarea><button type="submit" class="btn btn-orange">
-  Schedule Now
-</button></form>
+    <form action="https://formsubmit.co/info@valuepointconsultingltd.com" method="POST">
+
+  <!-- Disable Captcha -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- Email Subject -->
+  <input type="hidden" name="_subject" value="New Consultation Request">
+
+  <!-- Redirect After Submit -->
+  <input type="hidden" name="_next" value="https://valuepointconsultingltd.vercel.app/thank-you.html">
+
+  <input type="text" name="Full Name" placeholder="Full Name" required>
+
+  <input type="email" name="Email Address" placeholder="Email Address" required>
+
+  <input type="tel" name="Phone Number" placeholder="Phone Number" required>
+
+  <input type="text" name="Company Name" placeholder="Company Name">
+
+  <textarea name="Message" placeholder="How can we help you?" required></textarea>
+
+  <button type="submit" class="btn btn-orange">
+    Schedule Now
+  </button>
+
+</form>
   </div>
 </section>
 
